@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test_my_site, Hexo">
+    <meta name="keywords" content="个人博客搭建, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test_my_site | Hexo</title>
+    <title>个人博客搭建 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test_my_site</h1>
+                    <h1 class="description center-align post-title">个人博客搭建</h1>
                 </div>
             </div>
         </div>
@@ -443,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-16
+                    2021-01-17
                 </div>
                 
 
@@ -464,7 +464,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><h3 id="1-需要安装："><a href="#1-需要安装：" class="headerlink" title="1.需要安装："></a>1.需要安装：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### node.js</span></span><br><span class="line"><span class="comment">### git</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-查看安装成功的指令："><a href="#2-查看安装成功的指令：" class="headerlink" title="2.查看安装成功的指令："></a>2.查看安装成功的指令：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### node -v</span></span><br><span class="line"><span class="comment">### npm -v</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-GitHub注册账号，建库-配密钥："><a href="#3-GitHub注册账号，建库-配密钥：" class="headerlink" title="3.GitHub注册账号，建库,配密钥："></a>3.GitHub注册账号，建库,配密钥：</h3><h4 id="1-使用你的邮箱注册GitHub帐号"><a href="#1-使用你的邮箱注册GitHub帐号" class="headerlink" title="(1):使用你的邮箱注册GitHub帐号"></a>(1):使用你的邮箱注册GitHub帐号</h4><h4 id="2-创建库的名称的命名方式：用户名-github-io"><a href="#2-创建库的名称的命名方式：用户名-github-io" class="headerlink" title="(2):创建库的名称的命名方式：用户名.github.io"></a>(2):创建库的名称的命名方式：<strong>用户名</strong>.github.io</h4><h4 id="3-安装好Git后，右键“git-bash-here”进行一系列操作，以下是配置密钥的教程："><a href="#3-安装好Git后，右键“git-bash-here”进行一系列操作，以下是配置密钥的教程：" class="headerlink" title="(3):安装好Git后，右键“git bash here”进行一系列操作，以下是配置密钥的教程："></a>(3):安装好Git后，右键“git bash here”进行一系列操作，以下是配置密钥的教程：</h4><p>具体操作:如果是windows:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">#一 .设置git的user name和email：</span></span><br><span class="line"></span><br><span class="line">$ git config --global user.name <span class="string">&quot;test&quot;</span> <span class="comment">#换成github用户名</span></span><br><span class="line"></span><br><span class="line">$ git config --global user.email <span class="string">&quot;test@qq.com&quot;</span> <span class="comment">#绑定GitHub的邮箱</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#二 生成密钥  ssh-keygen -t rsa -C “test@qq.com” #绑定GitHub的邮箱</span></span><br><span class="line"> 按3个回车，密码为空。(不要输密码) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#生成目录是C:\Users\Administrator\.ssh（此处地址要视本机情况而定）</span></span><br><span class="line"><span class="comment">#然后将得到的公匙添加到对应的git服务器当中(gitlab,github,gitee)</span></span><br><span class="line"><span class="comment">#公钥id_rsa.pub设置到管理后台当前账号的ssh key中</span></span><br></pre></td></tr></table></figure>
+<p>以本机为例子：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sk7huj"><img src="https://s3.ax1x.com/2021/01/05/sk7huj.png" alt="sk7huj.png"></a></p>
+<p>此密钥要添加到github上</p>
+<p>git bash上检验：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh git@github.com</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sk7L2F"><img src="https://s3.ax1x.com/2021/01/05/sk7L2F.png" alt="sk7L2F.png"></a></p>
+<h2 id="进入搭建："><a href="#进入搭建：" class="headerlink" title="进入搭建："></a>进入搭建：</h2><h3 id="1-建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo："><a href="#1-建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo：" class="headerlink" title="1.建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo："></a>1.建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli </span><br></pre></td></tr></table></figure>
+<h3 id="接着初始化初始化我们的博客，输入："><a href="#接着初始化初始化我们的博客，输入：" class="headerlink" title="接着初始化初始化我们的博客，输入："></a>接着初始化初始化我们的博客，输入：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 会在Blog文件夹中创建一个blog文件夹</span></span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<h3 id="注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹"><a href="#注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹" class="headerlink" title="注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹"></a>注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹</h3><h3 id="2-输入以下指令，为检测博客雏形："><a href="#2-输入以下指令，为检测博客雏形：" class="headerlink" title="2.输入以下指令，为检测博客雏形："></a>2.输入以下指令，为检测博客雏形：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo new test_my_site</span><br><span class="line"></span><br><span class="line">hexo g</span><br><span class="line"></span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h3 id="当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。"><a href="#当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。" class="headerlink" title="当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。"></a>当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。</h3><h4 id="Hexo相关指令："><a href="#Hexo相关指令：" class="headerlink" title="Hexo相关指令："></a>Hexo相关指令：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g <span class="comment">#安装Hexo</span></span><br><span class="line">npm update hexo -g <span class="comment">#升级</span></span><br><span class="line">hexo init <span class="comment">#初始化博客</span></span><br><span class="line"></span><br><span class="line">命令简写</span><br><span class="line">hexo n <span class="string">&quot;我的博客&quot;</span> == hexo new <span class="string">&quot;我的博客&quot;</span> <span class="comment">#新建文章</span></span><br><span class="line">hexo g == hexo generate <span class="comment">#生成</span></span><br><span class="line">hexo s == hexo server <span class="comment">#启动服务预览</span></span><br><span class="line">hexo d == hexo deploy <span class="comment">#部署</span></span><br><span class="line"></span><br><span class="line">hexo server <span class="comment">#Hexo会监视文件变动并自动更新，无须重启服务器</span></span><br><span class="line">hexo server -s <span class="comment">#静态模式</span></span><br><span class="line">hexo server -p 5000 <span class="comment">#更改端口</span></span><br><span class="line">hexo server -i 192.168.1.1 <span class="comment">#自定义 IP</span></span><br><span class="line">hexo clean <span class="comment">#清除缓存，若是网页正常情况下可以忽略这条命令</span></span><br></pre></td></tr></table></figure>
+<h2 id="修改配置文件，并推送网站"><a href="#修改配置文件，并推送网站" class="headerlink" title="修改配置文件，并推送网站"></a>修改配置文件，并推送网站</h2><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为<strong>站点</strong>配置文件。</p>
+<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为<strong>主题</strong>配置文件(后面设置主题要用到)</p>
+<h3 id="1-配置站点配置文件，后保存"><a href="#1-配置站点配置文件，后保存" class="headerlink" title="1.配置站点配置文件，后保存"></a>1.配置站点配置文件，后保存</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 翻到文末：</span></span><br><span class="line"><span class="comment">### 修改格式和内容如下，注意冒号后有空格</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: 仓库中ssh下的网址</span><br><span class="line">  branch: master参考如下：</span><br></pre></td></tr></table></figure>
+<h3 id="2-安装Git部署插件："><a href="#2-安装Git部署插件：" class="headerlink" title="2.安装Git部署插件："></a>2.安装Git部署插件：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="3-推送："><a href="#3-推送：" class="headerlink" title="3.推送："></a>3.推送：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g </span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h3 id="以上操作完成后，你博客已经上线，输入网址：xxxx-github-io即可查看，xxxx为你GitHub的用户名。"><a href="#以上操作完成后，你博客已经上线，输入网址：xxxx-github-io即可查看，xxxx为你GitHub的用户名。" class="headerlink" title="以上操作完成后，你博客已经上线，输入网址：xxxx.github.io即可查看，xxxx为你GitHub的用户名。"></a>以上操作完成后，你博客已经上线，输入网址：xxxx.github.io即可查看，xxxx为你GitHub的用户名。</h3><h2 id="买域名，并实现绑定："><a href="#买域名，并实现绑定：" class="headerlink" title="买域名，并实现绑定："></a>买域名，并实现绑定：</h2><h3 id="以腾讯云为实例："><a href="#以腾讯云为实例：" class="headerlink" title="以腾讯云为实例："></a>以腾讯云为实例：</h3><h3 id="1-购买域名网址："><a href="#1-购买域名网址：" class="headerlink" title="(1):  购买域名网址："></a>(1):  购买域名网址：</h3><h3 id="2-绑定域名网址：https-console-cloud-tencent-com-domain"><a href="#2-绑定域名网址：https-console-cloud-tencent-com-domain" class="headerlink" title="(2):  绑定域名网址：https://console.cloud.tencent.com/domain"></a>(2):  绑定域名网址：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/domain">https://console.cloud.tencent.com/domain</a></h3><h3 id="3-点击解析-，添加两条记录如下："><a href="#3-点击解析-，添加两条记录如下：" class="headerlink" title="(3)点击解析 ，添加两条记录如下："></a>(3)点击解析 ，添加两条记录如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@           CNAME         默认              xxxx.github.io                   600</span><br><span class="line">www         CNAME         默认              xxxx.github.io                   600  </span><br></pre></td></tr></table></figure>
+<h4 id="4-登录GitHub，进入之前创建的仓库，点击settings，设置Custom-domain，输入你的域名"><a href="#4-登录GitHub，进入之前创建的仓库，点击settings，设置Custom-domain，输入你的域名" class="headerlink" title="(4)登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名"></a>(4)登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名</h4><h4 id="5-第三步，进入本地博客文件夹-，进入blog-source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www-不建议带有www"><a href="#5-第三步，进入本地博客文件夹-，进入blog-source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www-不建议带有www" class="headerlink" title="(5)第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www(不建议带有www):"></a>(5)第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www(不建议带有www):</h4><h4 id="保存，命名为CNAME-注意没有后缀。"><a href="#保存，命名为CNAME-注意没有后缀。" class="headerlink" title="保存，命名为CNAME,注意没有后缀。"></a>保存，命名为CNAME,注意没有后缀。</h4><h4 id="完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入："><a href="#完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入：" class="headerlink" title="完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入："></a>完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="个性化设置："><a href="#个性化设置：" class="headerlink" title="个性化设置："></a>个性化设置：</h2><h3 id="1-拉主题："><a href="#1-拉主题：" class="headerlink" title="1.拉主题："></a>1.拉主题：</h3><h3 id="1-首先下载你想要的主题到themes里面你自定义命名的文件夹面-如果时that主题，最好就命名我that"><a href="#1-首先下载你想要的主题到themes里面你自定义命名的文件夹面-如果时that主题，最好就命名我that" class="headerlink" title="(1).首先下载你想要的主题到themes里面你自定义命名的文件夹面(如果时that主题，最好就命名我that)"></a>(1).首先下载你想要的主题到themes里面你自定义命名的文件夹面(如果时that主题，最好就命名我that)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 使用git clone</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h3 id="2-上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径"><a href="#2-上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径" class="headerlink" title="(2).上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径"></a>(2).上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径</h3><h3 id="2-修改配置-进入themes里面的的文件-config-yml："><a href="#2-修改配置-进入themes里面的的文件-config-yml：" class="headerlink" title="2.修改配置,进入themes里面的的文件_config.yml："></a>2.修改配置,进入themes里面的的文件_config.yml：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 把theme改成你自定义的文件夹名称(that,一般就为主题名)</span></span><br></pre></td></tr></table></figure>
+<h3 id="完成这几步后，再推送："><a href="#完成这几步后，再推送：" class="headerlink" title="完成这几步后，再推送："></a>完成这几步后，再推送：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h2 id="发文章："><a href="#发文章：" class="headerlink" title="发文章："></a>发文章：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 我们会发现在blog根目录下的source文件夹中的_post文件夹中多了一个 博客名字.md 文件,点进去编译即可</span></span><br><span class="line">hexo n <span class="string">&quot;博客名字&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="最后再推送："><a href="#最后再推送：" class="headerlink" title="最后再推送："></a>最后再推送：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
                 
             </div>
             <hr/>
@@ -490,7 +526,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/16/test-my-site/">http://example.com/2021/01/16/test-my-site/</a>
+                    <a href="http://example.com/2021/01/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">http://example.com/2021/01/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -697,9 +733,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
                 <a href="/2021/01/17/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
                     <div class="card-image">
@@ -717,9 +754,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -728,6 +765,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -738,13 +776,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/16/hello-world/">
+                <a href="/2021/01/16/test-my-site/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="test_my_site">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">test_my_site</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
