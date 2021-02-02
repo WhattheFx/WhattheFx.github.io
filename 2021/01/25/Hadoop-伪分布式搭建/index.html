@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -467,72 +467,117 @@
                 <h3 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h3><p>使用Hadoop，要关闭防火墙。</p>
 <h3 id="安装jdk：Java虚拟机"><a href="#安装jdk：Java虚拟机" class="headerlink" title="安装jdk：Java虚拟机"></a>安装jdk：Java虚拟机</h3><p>凡是Java开发的程序，必须运行在Java虚拟机上面。Hadoop就是Java开发的。</p>
 <p>解压命令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-C是指定目录，~表示的是当前目录，演示的是root目录</span><br><span class="line">tar zxvf 文件名 -C ~</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">-C是指定目录，~表示的是当前目录，演示的是root目录
+<span class="token function">tar</span> zxvf 文件名 -C ~</code></pre>
 <p>创建软连接：把刚解压的文件重新定义一个名字。l</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s jdk1.8.0_171/ jdk</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -s jdk1.8.0_171/ jdk</code></pre>
 <p>配置环境变量：如果不配，敲Java命令，没法调用jdk</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/profile</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/profile</code></pre>
 <p>拉到最低：做以下配置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//指定路径  //指定架包</span><br><span class="line"><span class="built_in">export</span> JAVA_HOME=/root/jdk</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></span><br><span class="line"><span class="built_in">export</span> CLASSPATH=<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar:.</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">//指定路径  //指定架包
+<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/root/jdk
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span>
+<span class="token function">export</span> CLASSPATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar:.</code></pre>
 <p>source一下，使得环境变量生效</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
 <p>输入Java，会有Java指令</p>
 <p>查看Java版本:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">java -version</code></pre>
 <p>确定oppenssl version,openssh-server是否安装，设置免密钥。一般centos7是默认安装的。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl version</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">openssl version</code></pre>
 <p>如果没有安装：解压，创建软连接，再配置环境变量。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install openssl</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">yum -y <span class="token function">install</span> openssl</code></pre>
 <h3 id="安装Hadoop："><a href="#安装Hadoop：" class="headerlink" title="安装Hadoop："></a>安装Hadoop：</h3><p>解压</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">-C是指定目录，~表示的是当前目录，演示的是root目录</span><br><span class="line">tar zxvf 文件名 -C ~</span><br><span class="line">tar zxvf hadoop-2.7.3.tar.gz  -C ~</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">-C是指定目录，~表示的是当前目录，演示的是root目录
+<span class="token function">tar</span> zxvf 文件名 -C ~
+<span class="token function">tar</span> zxvf hadoop-2.7.3.tar.gz  -C ~</code></pre>
 <p>创建软链接</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s hadoop-2.7.3 hadoop</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -s hadoop-2.7.3 hadoop</code></pre>
 <p>然后配置环境变量：去配置Java的环境变量里面去加：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export HADOOP_HOME=/root/hadoop</span><br><span class="line">export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</span><br></pre></td></tr></table></figure>
+<pre class=" language-shell"><code class="language-shell">export HADOOP_HOME=/root/hadoop
+export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</code></pre>
 <p>使环境变量生效：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> /etc/profile</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
 <p>输入hdfs查看是否Hadoop是否安装好。</p>
-<h3 id="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"><a href="#修改Hadoop的配置：进入目录进行配置，要看你安装的目录。" class="headerlink" title="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"></a>修改Hadoop的配置：进入目录进行配置，要看你安装的目录。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/hadoop/etc/hadoop</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## 查看里面全部是配置文件</span></span><br><span class="line">ls</span><br></pre></td></tr></table></figure>
+<h3 id="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"><a href="#修改Hadoop的配置：进入目录进行配置，要看你安装的目录。" class="headerlink" title="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"></a>修改Hadoop的配置：进入目录进行配置，要看你安装的目录。</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /root/hadoop/etc/hadoop</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 查看里面全部是配置文件</span>
+<span class="token function">ls</span></code></pre>
 <p>配置Javahome:因为Hadoop是运行在Java虚拟机上的。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi hadoop-env.sh</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> hadoop-env.sh</code></pre>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sbZVr8"><img src="https://s3.ax1x.com/2021/01/24/sbZVr8.png" alt="sbZVr8.png"></a></p>
 <p>$JAVA_HONE改为 /root/jdk</p>
 <h3 id="伪分布模式："><a href="#伪分布模式：" class="headerlink" title="伪分布模式："></a>伪分布模式：</h3><p>配置主机名映射：</p>
 <p>1.配置主机名：vi  /etc/hosts 结尾加上</p>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqd3id"><img src="https://s3.ax1x.com/2021/01/25/sqd3id.png" alt="sqd3id.png"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.126.10 PTC1</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">192.168.126.10 PTC1</code></pre>
 <p>2,通过ssh-key生成一个RSA的密钥对：配药匙</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -P <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -P <span class="token string">''</span></code></pre>
 <p>3.公钥追加到~ssh/authorized_keys文件中:把药匙给你的机器名</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-copy-id -i ~/.ssh/id_rsa.pub PTC1</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">ssh-copy-id -i ~/.ssh/id_rsa.pub PTC1</code></pre>
 <p>yes，并输入root密码。</p>
-<h3 id="测试免密钥是否成功"><a href="#测试免密钥是否成功" class="headerlink" title="测试免密钥是否成功"></a>测试免密钥是否成功</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh PTC1</span><br></pre></td></tr></table></figure>
+<h3 id="测试免密钥是否成功"><a href="#测试免密钥是否成功" class="headerlink" title="测试免密钥是否成功"></a>测试免密钥是否成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> PTC1</code></pre>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqdwdg"><img src="https://s3.ax1x.com/2021/01/25/sqdwdg.png" alt="sqdwdg.png"></a></p>
 <p>退出：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">exit</span></code></pre>
 <h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><p>配置hdfs-site.xml</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">### 路径</span></span><br><span class="line"><span class="built_in">cd</span> /root/hadoop/etc/hadoop</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi hdfs-site.xml</span><br></pre></td></tr></table></figure>
-<h3 id="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"><a href="#configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。" class="headerlink" title="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"></a>configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--表示数据块的冗余度,默认是：3--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置core-site-xml"><a href="#配置core-site-xml" class="headerlink" title="配置core-site.xml"></a>配置core-site.xml</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--配置NameNode地址。9000是RPC通信端口--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>fs.defaultFS<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>hdfs://192.168.171.101:8020<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--HDFS数据库保存在Linux的哪个目录，默认值时linux的tmp目录--&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>hadoop.tmp.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>/root/hadoop/tmp<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 路径</span>
+<span class="token function">cd</span> /root/hadoop/etc/hadoop</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> hdfs-site.xml</code></pre>
+<h3 id="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"><a href="#configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。" class="headerlink" title="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"></a>configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。</h3><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--表示数据块的冗余度,默认是：3--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="配置core-site-xml"><a href="#配置core-site-xml" class="headerlink" title="配置core-site.xml"></a>配置core-site.xml</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--配置NameNode地址。9000是RPC通信端口--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://192.168.171.101:8020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--HDFS数据库保存在Linux的哪个目录，默认值时linux的tmp目录--></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/root/hadoop/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
 <p>配置mapred-site.xml:默认没有：cp mapred-site.xml.template mapred-site.xml(复制一个)</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--MR运行的框架--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapreduce.framework.name<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>yarn<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--MR运行的框架--></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
 <p>配置 yarn-site.xml</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">	<span class="comment">&lt;!--Yarn的主节点RM的位置--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.resourcemanager.hostname<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>192.168.171.101<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">&lt;!--MapReduce运行方式：shuffle洗牌--&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">name</span>&gt;</span>yarn.nodemanager.aux-services<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">	    <span class="tag">&lt;<span class="name">value</span>&gt;</span>mapreduce_shuffle<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--Yarn的主节点RM的位置--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>192.168.171.101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!--MapReduce运行方式：shuffle洗牌--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
 <p>格式化:只能一次</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hdfs namenode -format</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash"> $ hdfs namenode -format</code></pre>
 <p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqdWeU"><img src="https://s3.ax1x.com/2021/01/25/sqdWeU.png" alt="sqdWeU.png"></a></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ start-all.sh</span><br></pre></td></tr></table></figure>
+<pre class=" language-bash"><code class="language-bash">$ start-all.sh</code></pre>
 <p>访问 ip:50070</p>
 <p>出现hadoop，说明ok</p>
 <h2 id="踩坑一：vi-hadoop-env-sh-这里要改成-JAVA-HOME-的绝对路径"><a href="#踩坑一：vi-hadoop-env-sh-这里要改成-JAVA-HOME-的绝对路径" class="headerlink" title="踩坑一：vi hadoop-env.sh 这里要改成 JAVA_HOME 的绝对路径"></a>踩坑一：vi hadoop-env.sh 这里要改成 JAVA_HOME 的绝对路径</h2><h2 id="踩坑二：-如果无法访问，但是本机-curl-可以访问，说明是防火墙没有关闭"><a href="#踩坑二：-如果无法访问，但是本机-curl-可以访问，说明是防火墙没有关闭" class="headerlink" title="踩坑二： 如果无法访问，但是本机  curl 可以访问，说明是防火墙没有关闭"></a>踩坑二： 如果无法访问，但是本机  curl 可以访问，说明是防火墙没有关闭</h2><p>centos7上面不可用 iptables</p>
 <p>用的<code>firewalld</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看防火墙状态</span></span><br><span class="line">systemctl status firewalld</span><br><span class="line"><span class="comment"># 关闭防火墙</span></span><br><span class="line">systemctl stop firewalld</span><br><span class="line"><span class="comment"># 禁止开机启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld</span><br></pre></td></tr></table></figure>
-
-
-
-
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看防火墙状态</span>
+systemctl status firewalld
+<span class="token comment" spellcheck="true"># 关闭防火墙</span>
+systemctl stop firewalld
+<span class="token comment" spellcheck="true"># 禁止开机启动</span>
+systemctl disable firewalld</code></pre>
 
                 
             </div>

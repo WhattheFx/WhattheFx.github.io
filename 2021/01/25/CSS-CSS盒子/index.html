@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 5.3.0"></head>
+<meta name="generator" content="Hexo 5.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
 
@@ -464,15 +464,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="CSS盒子："><a href="#CSS盒子：" class="headerlink" title="CSS盒子："></a>CSS盒子：</h2><h4 id="简单的一个盒子："><a href="#简单的一个盒子：" class="headerlink" title="简单的一个盒子："></a>简单的一个盒子：</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid black;</span><br><span class="line">    <span class="attribute">border-width</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
-<h3 id="文本的一些CSS属性："><a href="#文本的一些CSS属性：" class="headerlink" title="文本的一些CSS属性："></a>文本的一些CSS属性：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*文本对齐方式*/</span></span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">left</span>;</span><br><span class="line"><span class="comment">/*文本所占高度*/</span><span class="selector-tag">h</span></span><br><span class="line"><span class="selector-tag">line-height</span>：200<span class="selector-tag">px</span>;</span><br><span class="line"><span class="comment">/*首行缩进(缩进几个字体)*/</span></span><br><span class="line"><span class="selector-tag">text-indent</span>: 2<span class="selector-tag">em</span>;</span><br><span class="line">1em=1font-size</span><br><span class="line"><span class="comment">/*中划线/没有线/underline*/</span></span><br><span class="line"><span class="selector-tag">text-decoration</span>: <span class="selector-tag">line-through</span>/<span class="selector-tag">none</span>/<span class="selector-tag">underline</span></span><br><span class="line"><span class="comment">/*设置光标*/</span></span><br><span class="line"><span class="selector-tag">cursor</span>: <span class="selector-tag">pointer</span>/<span class="selector-tag">help</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="居中的实现方式-前提为一行文本"><a href="#居中的实现方式-前提为一行文本" class="headerlink" title="居中的实现方式:前提为一行文本"></a>居中的实现方式:前提为一行文本</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*垂直居中：文本高度等于盒子高度*/</span></span><br></pre></td></tr></table></figure>
-<h3 id="盒子属性："><a href="#盒子属性：" class="headerlink" title="盒子属性："></a>盒子属性：</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">border-radius</span><span class="selector-pseudo">:10px</span>;</span><br></pre></td></tr></table></figure>
+                <h2 id="CSS盒子："><a href="#CSS盒子：" class="headerlink" title="CSS盒子："></a>CSS盒子：</h2><h4 id="简单的一个盒子："><a href="#简单的一个盒子：" class="headerlink" title="简单的一个盒子："></a>简单的一个盒子：</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
 
-
-
-
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class=" language-CSS"><code class="language-CSS">div&#123;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-width: 10px;
+&#125;    </code></pre>
+<h3 id="文本的一些CSS属性："><a href="#文本的一些CSS属性：" class="headerlink" title="文本的一些CSS属性："></a>文本的一些CSS属性：</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*文本对齐方式*/</span>
+<span class="token property">text-align</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*文本所占高度*/</span>h
+line-height：<span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*首行缩进(缩进几个字体)*/</span>
+<span class="token property">text-indent</span><span class="token punctuation">:</span> <span class="token number">2</span>em<span class="token punctuation">;</span>
+<span class="token number">1</span>em=<span class="token number">1</span>font-size
+<span class="token comment" spellcheck="true">/*中划线/没有线/underline*/</span>
+<span class="token property">text-decoration</span><span class="token punctuation">:</span> line-through/none/underline
+<span class="token comment" spellcheck="true">/*设置光标*/</span>
+<span class="token property">cursor</span><span class="token punctuation">:</span> pointer/help<span class="token punctuation">;</span></code></pre>
+<h3 id="居中的实现方式-前提为一行文本"><a href="#居中的实现方式-前提为一行文本" class="headerlink" title="居中的实现方式:前提为一行文本"></a>居中的实现方式:前提为一行文本</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*垂直居中：文本高度等于盒子高度*/</span></code></pre>
+<h3 id="盒子属性："><a href="#盒子属性：" class="headerlink" title="盒子属性："></a>盒子属性：</h3><pre class=" language-css"><code class="language-css"><span class="token property">border-radius</span><span class="token punctuation">:</span><span class="token number">10</span>px<span class="token punctuation">;</span></code></pre>
 
                 
             </div>
