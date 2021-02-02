@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hadoop_伪分布式搭建, WhattheFx">
+    <meta name="keywords" content=".Vue的封装, WhattheFx">
     <meta name="description" content="I see you">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hadoop_伪分布式搭建 | WhattheFx</title>
+    <title>.Vue的封装 | WhattheFx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hadoop_伪分布式搭建</h1>
+                    <h1 class="description center-align post-title">.Vue的封装</h1>
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hadoop/">
-                                <span class="chip bg-color">Hadoop</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-25
+                    2021-02-02
                 </div>
                 
 
@@ -478,121 +478,225 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h3><p>使用Hadoop，要关闭防火墙。</p>
-<h3 id="安装jdk：Java虚拟机"><a href="#安装jdk：Java虚拟机" class="headerlink" title="安装jdk：Java虚拟机"></a>安装jdk：Java虚拟机</h3><p>凡是Java开发的程序，必须运行在Java虚拟机上面。Hadoop就是Java开发的。</p>
-<p>解压命令：</p>
-<pre class=" language-bash"><code class="language-bash">-C是指定目录，~表示的是当前目录，演示的是root目录
-<span class="token function">tar</span> zxvf 文件名 -C ~</code></pre>
-<p>创建软连接：把刚解压的文件重新定义一个名字。l</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -s jdk1.8.0_171/ jdk</code></pre>
-<p>配置环境变量：如果不配，敲Java命令，没法调用jdk</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/profile</code></pre>
-<p>拉到最低：做以下配置</p>
-<pre class=" language-bash"><code class="language-bash">//指定路径  //指定架包
-<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/root/jdk
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span>
-<span class="token function">export</span> CLASSPATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar:.</code></pre>
-<p>source一下，使得环境变量生效</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
-<p>输入Java，会有Java指令</p>
-<p>查看Java版本:</p>
-<pre class=" language-bash"><code class="language-bash">java -version</code></pre>
-<p>确定oppenssl version,openssh-server是否安装，设置免密钥。一般centos7是默认安装的。</p>
-<pre class=" language-bash"><code class="language-bash">openssl version</code></pre>
-<p>如果没有安装：解压，创建软连接，再配置环境变量。</p>
-<pre class=" language-bash"><code class="language-bash">yum -y <span class="token function">install</span> openssl</code></pre>
-<h3 id="安装Hadoop："><a href="#安装Hadoop：" class="headerlink" title="安装Hadoop："></a>安装Hadoop：</h3><p>解压</p>
-<pre class=" language-bash"><code class="language-bash">-C是指定目录，~表示的是当前目录，演示的是root目录
-<span class="token function">tar</span> zxvf 文件名 -C ~
-<span class="token function">tar</span> zxvf hadoop-2.7.3.tar.gz  -C ~</code></pre>
-<p>创建软链接</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -s hadoop-2.7.3 hadoop</code></pre>
-<p>然后配置环境变量：去配置Java的环境变量里面去加：</p>
-<pre class=" language-shell"><code class="language-shell">export HADOOP_HOME=/root/hadoop
-export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</code></pre>
-<p>使环境变量生效：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
-<p>输入hdfs查看是否Hadoop是否安装好。</p>
-<h3 id="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"><a href="#修改Hadoop的配置：进入目录进行配置，要看你安装的目录。" class="headerlink" title="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"></a>修改Hadoop的配置：进入目录进行配置，要看你安装的目录。</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /root/hadoop/etc/hadoop</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 查看里面全部是配置文件</span>
-<span class="token function">ls</span></code></pre>
-<p>配置Javahome:因为Hadoop是运行在Java虚拟机上的。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> hadoop-env.sh</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sbZVr8"><img src="https://s3.ax1x.com/2021/01/24/sbZVr8.png" alt="sbZVr8.png"></a></p>
-<p>$JAVA_HONE改为 /root/jdk</p>
-<h3 id="伪分布模式："><a href="#伪分布模式：" class="headerlink" title="伪分布模式："></a>伪分布模式：</h3><p>配置主机名映射：</p>
-<p>1.配置主机名：vi  /etc/hosts 结尾加上</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqd3id"><img src="https://s3.ax1x.com/2021/01/25/sqd3id.png" alt="sqd3id.png"></a></p>
-<pre class=" language-bash"><code class="language-bash">192.168.126.10 PTC1</code></pre>
-<p>2,通过ssh-key生成一个RSA的密钥对：配药匙</p>
-<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -P <span class="token string">''</span></code></pre>
-<p>3.公钥追加到~ssh/authorized_keys文件中:把药匙给你的机器名</p>
-<pre class=" language-bash"><code class="language-bash">ssh-copy-id -i ~/.ssh/id_rsa.pub PTC1</code></pre>
-<p>yes，并输入root密码。</p>
-<h3 id="测试免密钥是否成功"><a href="#测试免密钥是否成功" class="headerlink" title="测试免密钥是否成功"></a>测试免密钥是否成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> PTC1</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqdwdg"><img src="https://s3.ax1x.com/2021/01/25/sqdwdg.png" alt="sqdwdg.png"></a></p>
-<p>退出：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">exit</span></code></pre>
-<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><p>配置hdfs-site.xml</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 路径</span>
-<span class="token function">cd</span> /root/hadoop/etc/hadoop</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> hdfs-site.xml</code></pre>
-<h3 id="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"><a href="#configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。" class="headerlink" title="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"></a>configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。</h3><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--表示数据块的冗余度,默认是：3--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="配置core-site-xml"><a href="#配置core-site-xml" class="headerlink" title="配置core-site.xml"></a>配置core-site.xml</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--配置NameNode地址。9000是RPC通信端口--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://192.168.171.101:8020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--HDFS数据库保存在Linux的哪个目录，默认值时linux的tmp目录--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/root/hadoop/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<p>配置mapred-site.xml:默认没有：cp mapred-site.xml.template mapred-site.xml(复制一个)</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--MR运行的框架--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<p>配置 yarn-site.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--Yarn的主节点RM的位置--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>192.168.171.101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+                <h2 id="vue的文件的封装："><a href="#vue的文件的封装：" class="headerlink" title=".vue的文件的封装："></a>.vue的文件的封装：</h2><h3 id="1-首先，创建的实例对象："><a href="#1-首先，创建的实例对象：" class="headerlink" title="1.首先，创建的实例对象："></a>1.首先，创建的实例对象：</h3><p>main.js文件里面创建如下实例：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> app <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
-    <span class="token comment" spellcheck="true">&lt;!--MapReduce运行方式：shuffle洗牌--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<p>格式化:只能一次</p>
-<pre class=" language-bash"><code class="language-bash"> $ hdfs namenode -format</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqdWeU"><img src="https://s3.ax1x.com/2021/01/25/sqdWeU.png" alt="sqdWeU.png"></a></p>
-<pre class=" language-bash"><code class="language-bash">$ start-all.sh</code></pre>
-<p>访问 ip:50070</p>
-<p>出现hadoop，说明ok</p>
-<h2 id="踩坑一：vi-hadoop-env-sh-这里要改成-JAVA-HOME-的绝对路径"><a href="#踩坑一：vi-hadoop-env-sh-这里要改成-JAVA-HOME-的绝对路径" class="headerlink" title="踩坑一：vi hadoop-env.sh 这里要改成 JAVA_HOME 的绝对路径"></a>踩坑一：vi hadoop-env.sh 这里要改成 JAVA_HOME 的绝对路径</h2><h2 id="踩坑二：-如果无法访问，但是本机-curl-可以访问，说明是防火墙没有关闭"><a href="#踩坑二：-如果无法访问，但是本机-curl-可以访问，说明是防火墙没有关闭" class="headerlink" title="踩坑二： 如果无法访问，但是本机  curl 可以访问，说明是防火墙没有关闭"></a>踩坑二： 如果无法访问，但是本机  curl 可以访问，说明是防火墙没有关闭</h2><p>centos7上面不可用 iptables</p>
-<p>用的<code>firewalld</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看防火墙状态</span>
-systemctl status firewalld
-<span class="token comment" spellcheck="true"># 关闭防火墙</span>
-systemctl stop firewalld
-<span class="token comment" spellcheck="true"># 禁止开机启动</span>
-systemctl disable firewalld</code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<p>app没有什么实质性的用处，其实可以省略const app，简写为以下：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<p>html文件里面的script标签里面的内容，直接放到新建的对象里面。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    el<span class="token punctuation">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span><span class="token string">'coderwhy'</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<p>index.html剩余的内容：</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span>message<span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+        &lt;button @click= "btnClick">按钮<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">></span></span><span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span>name<span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<p>接下来，public文件夹中的index.html文件中的div里面的东西不需要动，前提是要做一个.vue的封装。</p>
+<p>index.html只保存如下代码：<strong>一般是不会改的。</strong></p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!--和Vue对应--></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="2-定义一个template属性：Vue内部会把template里面的内容和index-html里面的div替换，即template会替换el。"><a href="#2-定义一个template属性：Vue内部会把template里面的内容和index-html里面的div替换，即template会替换el。" class="headerlink" title="2.定义一个template属性：Vue内部会把template里面的内容和index.html里面的div替换，即template会替换el。"></a>2.定义一个template属性：Vue内部会把template里面的内容和index.html里面的div替换，即template会替换el。</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    el<span class="token punctuation">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>
+        template<span class="token punctuation">:</span><span class="token template-string"><span class="token string">`
+        &lt;div>
+        &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2>
+        &lt;button @click= "btnClick">按钮&lt;/button>
+        &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2>
+        &lt;/div>
+`</span></span>
+    <span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span><span class="token string">'coderwhy'</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<p>第一，Vue实例中写太多template,会显得臃肿,需单独创建一个对象：后面这个对象会演变为一个组件，即.vue文件。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">:</span><span class="token template-string"><span class="token string">`
+        &lt;div>
+        &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2>
+        &lt;button @click= "btnClick">按钮&lt;/button>
+        &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2>
+        &lt;/div>
+`</span></span>
+    <span class="token punctuation">,</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p>删减上面template内容后的mian.js文件的创建实例剩余部分：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    el<span class="token punctuation">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>
+    template<span class="token punctuation">:</span><span class="token template-string"><span class="token string">``</span></span><span class="token punctuation">,</span>
+    data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+        name<span class="token punctuation">:</span><span class="token string">'coderwhy'</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<p>同理，data的里面内容也可以转到组件template当中,全部抽取到新建立的一个App对象当中</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">:</span><span class="token template-string"><span class="token string">`
+        &lt;div>
+        &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2>
+        &lt;button @click= "btnClick">按钮&lt;/button>
+        &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2>
+        &lt;/div>
+`</span></span>
+<span class="token punctuation">,</span>
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+ <span class="token comment" spellcheck="true">//转换过来多了个return，因为是data()函数</span>
+    <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+         message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+         name<span class="token punctuation">:</span>'coderwhy 
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>           
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p>同理methods也可以抽取到App对象当中：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    template<span class="token punctuation">:</span><span class="token template-string"><span class="token string">`
+        &lt;div>
+        &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2>
+        &lt;button @click= "btnClick">按钮&lt;/button>
+        &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2>
+        &lt;/div>,
+`</span></span>
+<span class="token punctuation">,</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//转换过来多了个return，因为是data()函数</span>
+         <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+                 name<span class="token punctuation">:</span><span class="token string">'coderwhy'</span>
+                 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+ <span class="token punctuation">,</span>
+         methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                 <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p>以上App对象实则是个组件，只需在Vue实例里面去注册这个App，在Vue里面注册组件，在template里面使用组件。在Vue实例里面找到</p>
+<p>这个组件，然后解析template。</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    el<span class="token punctuation">:</span><span class="token string">'#app'</span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">//在这个了用app，就在template中用了一个组件，先注册一个组件，再在template用了这个组件</span>
+    template<span class="token punctuation">:</span><span class="token string">'&lt;App/>'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//这个&lt;App/>就代替了那个index.html中的&lt;div>&lt;/div></span>
+<span class="token comment" spellcheck="true">//在components注册App,这就把整个组件封装进来了</span>
+    components<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        App
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span></code></pre>
+<p>创建一个app.js文件，放入刚刚创立的App对象：</p>
+<p>把App常量的东西剪掉，复制到app.js中,相当于把组件放到了app.js中</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">export</span> <span class="token keyword">default</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+   <span class="token comment" spellcheck="true">//以下为模板代码</span>
+    template<span class="token punctuation">:</span><span class="token template-string"><span class="token string">`
+        &lt;div>
+        &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2>
+        &lt;button @click= "btnClick">按钮&lt;/button>
+        &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2>
+        &lt;/div>,
+`</span></span><span class="token punctuation">,</span>
+<span class="token comment" spellcheck="true">//以下为js代码</span>
+        <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//转换过来多了个return，因为是data()函数</span>
+         <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                 message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+                 name<span class="token punctuation">:</span><span class="token string">'coderwhy'</span>
+                 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>   
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
+        methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                 <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span></code></pre>
+<p>main.js中的直接引入新键的app.js就行</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">const</span> App <span class="token operator">=</span>变成以下引入：
+<span class="token comment" spellcheck="true">//default导入不需要大括号x，因为只有一个变量</span>
+<span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">"./vue/app"</span>
+<span class="token comment" spellcheck="true">//因为默认是default，App其实是新命名的变量名，而App其实就是一个对象赋值得来的，</span>
+<span class="token comment" spellcheck="true">//export default 直接&amp;#123;&amp;#125;</span>
+<span class="token comment" spellcheck="true">//省略了变量名App</span></code></pre>
+<p>但改实例对象赋值的变量的，里面的模板和js代码没有分离。</p>
+<h3 id="3-创建App-vue文件，把template和js代码分离。"><a href="#3-创建App-vue文件，把template和js代码分离。" class="headerlink" title="3.创建App.vue文件，把template和js代码分离。"></a>3.创建App.vue文件，把template和js代码分离。</h3><p>新建app.vue组件，把app.js里面的东西分离，效果如下。</p>
+<pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+       <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token operator">&lt;</span>h2 <span class="token keyword">class</span> <span class="token operator">=</span> <span class="token string">"title"</span><span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>message<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+        <span class="token operator">&lt;</span>button @click<span class="token operator">=</span> <span class="token string">"btnClick"</span><span class="token operator">></span>按钮<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+        <span class="token operator">&lt;</span>h2<span class="token operator">></span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>name<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token operator">&lt;</span><span class="token operator">/</span>h2<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+        <span class="token comment" spellcheck="true">//export default一个对象</span>
+        <span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//这是自带的</span>
+        name<span class="token punctuation">:</span><span class="token string">"App"</span>，
+         <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//转换过来多了个return，因为是data()函数</span>
+         <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                 message<span class="token punctuation">:</span><span class="token string">'Hello Webpack'</span><span class="token punctuation">,</span>
+                 name<span class="token punctuation">:</span><span class="token string">'coderwhy'</span>
+                 <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>   
+         <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>，
+        methods<span class="token punctuation">:</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+                 <span class="token function">btnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+
+        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span> 
+ <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>style scoped<span class="token operator">></span>
+    <span class="token punctuation">.</span>title<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        color<span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span></code></pre>
+<p>在main.js中导导入：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">import</span> App <span class="token keyword">from</span> <span class="token string">'./vue/App.vue'</span></code></pre>
+<p>创建的App.vue无法加载，要配置node。在在webpack.config.js里面配置。node_modules里面的东西。</p>
+<h3 id="以上就是-vue文件封装的全过程，实现组件化开发。"><a href="#以上就是-vue文件封装的全过程，实现组件化开发。" class="headerlink" title="以上就是.vue文件封装的全过程，实现组件化开发。"></a>以上就是.vue文件封装的全过程，实现组件化开发。</h3>
                 
             </div>
             <hr/>
@@ -618,7 +722,7 @@ systemctl disable firewalld</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/25/Hadoop-%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/">http://example.com/2021/01/25/Hadoop-%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/</a>
+                    <a href="http://example.com/2021/02/02/Vue%E7%9A%84%E5%B0%81%E8%A3%85/">http://example.com/2021/02/02/Vue%E7%9A%84%E5%B0%81%E8%A3%85/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -656,8 +760,8 @@ systemctl disable firewalld</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hadoop/">
-                                    <span class="chip bg-color">Hadoop</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
                         </div>
@@ -829,17 +933,18 @@ systemctl disable firewalld</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/02/02/Vue%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B/">
+                <a href="/2021/02/02/Vue%E7%9A%84%E5%B0%81%E8%A3%85/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Vue最简单的实例">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt=".Vue的封装">
                         
-                        <span class="card-title">Vue最简单的实例</span>
+                        <span class="card-title">.Vue的封装</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -849,9 +954,9 @@ systemctl disable firewalld</code></pre>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -860,6 +965,7 @@ systemctl disable firewalld</code></pre>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -878,13 +984,13 @@ systemctl disable firewalld</code></pre>
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/25/CSS-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
+                <a href="/2021/02/02/Vue%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CSS_盒子模型">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Vue最简单的实例">
                         
-                        <span class="card-title">CSS_盒子模型</span>
+                        <span class="card-title">Vue最简单的实例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -895,7 +1001,7 @@ systemctl disable firewalld</code></pre>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
                             </span>
                         <span class="publish-author">
                             
@@ -908,8 +1014,8 @@ systemctl disable firewalld</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Css/">
-                        <span class="chip bg-color">Css</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
