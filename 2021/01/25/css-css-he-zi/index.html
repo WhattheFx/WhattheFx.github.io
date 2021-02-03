@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hadoop_伪分布式搭建, WhattheFx">
+    <meta name="keywords" content="CSS_CSS盒子, WhattheFx">
     <meta name="description" content="I see you">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hadoop_伪分布式搭建 | WhattheFx</title>
+    <title>CSS_CSS盒子 | WhattheFx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hadoop_伪分布式搭建</h1>
+                    <h1 class="description center-align post-title">CSS_CSS盒子</h1>
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hadoop/">
-                                <span class="chip bg-color">Hadoop</span>
+                            <a href="/tags/Css/">
+                                <span class="chip bg-color">Css</span>
                             </a>
                         
                     </div>
@@ -478,120 +478,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h3><p>使用Hadoop，要关闭防火墙。</p>
-<h3 id="安装jdk：Java虚拟机"><a href="#安装jdk：Java虚拟机" class="headerlink" title="安装jdk：Java虚拟机"></a>安装jdk：Java虚拟机</h3><p>凡是Java开发的程序，必须运行在Java虚拟机上面。Hadoop就是Java开发的。</p>
-<p>解压命令：</p>
-<pre class=" language-bash"><code class="language-bash">-C是指定目录，~表示的是当前目录，演示的是root目录
-<span class="token function">tar</span> zxvf 文件名 -C ~</code></pre>
-<p>创建软连接：把刚解压的文件重新定义一个名字。l</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -s jdk1.8.0_171/ jdk</code></pre>
-<p>配置环境变量：如果不配，敲Java命令，没法调用jdk</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> /etc/profile</code></pre>
-<p>拉到最低：做以下配置</p>
-<pre class=" language-bash"><code class="language-bash">//指定路径  //指定架包
-<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/root/jdk
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span>
-<span class="token function">export</span> CLASSPATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/lib/dt.jar:<span class="token variable">$JAVA_HOME</span>/lib/tools.jar:.</code></pre>
-<p>source一下，使得环境变量生效</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
-<p>输入Java，会有Java指令</p>
-<p>查看Java版本:</p>
-<pre class=" language-bash"><code class="language-bash">java -version</code></pre>
-<p>确定oppenssl version,openssh-server是否安装，设置免密钥。一般centos7是默认安装的。</p>
-<pre class=" language-bash"><code class="language-bash">openssl version</code></pre>
-<p>如果没有安装：解压，创建软连接，再配置环境变量。</p>
-<pre class=" language-bash"><code class="language-bash">yum -y <span class="token function">install</span> openssl</code></pre>
-<h3 id="安装Hadoop："><a href="#安装Hadoop：" class="headerlink" title="安装Hadoop："></a>安装Hadoop：</h3><p>解压</p>
-<pre class=" language-bash"><code class="language-bash">-C是指定目录，~表示的是当前目录，演示的是root目录
-<span class="token function">tar</span> zxvf 文件名 -C ~
-<span class="token function">tar</span> zxvf hadoop-2.7.3.tar.gz  -C ~</code></pre>
-<p>创建软链接</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ln</span> -s hadoop-2.7.3 hadoop</code></pre>
-<p>然后配置环境变量：去配置Java的环境变量里面去加：</p>
-<pre class=" language-shell"><code class="language-shell">export HADOOP_HOME=/root/hadoop
-export PATH=$HADOOP_HOME/bin:$HADOOP_HOME/sbin:$PATH</code></pre>
-<p>使环境变量生效：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">source</span> /etc/profile</code></pre>
-<p>输入hdfs查看是否Hadoop是否安装好。</p>
-<h3 id="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"><a href="#修改Hadoop的配置：进入目录进行配置，要看你安装的目录。" class="headerlink" title="修改Hadoop的配置：进入目录进行配置，要看你安装的目录。"></a>修改Hadoop的配置：进入目录进行配置，要看你安装的目录。</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> /root/hadoop/etc/hadoop</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">## 查看里面全部是配置文件</span>
-<span class="token function">ls</span></code></pre>
-<p>配置Javahome:因为Hadoop是运行在Java虚拟机上的。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> hadoop-env.sh</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sbZVr8"><img src="https://s3.ax1x.com/2021/01/24/sbZVr8.png" alt="sbZVr8.png"></a></p>
-<p>$JAVA_HONE改为 /root/jdk</p>
-<h3 id="伪分布模式："><a href="#伪分布模式：" class="headerlink" title="伪分布模式："></a>伪分布模式：</h3><p>配置主机名映射：</p>
-<p>1.配置主机名：vi  /etc/hosts 结尾加上</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqd3id"><img src="https://s3.ax1x.com/2021/01/25/sqd3id.png" alt="sqd3id.png"></a></p>
-<pre class=" language-bash"><code class="language-bash">192.168.126.10 PTC1</code></pre>
-<p>2,通过ssh-key生成一个RSA的密钥对：配药匙</p>
-<pre class=" language-bash"><code class="language-bash">ssh-keygen -t rsa -P <span class="token string">''</span></code></pre>
-<p>3.公钥追加到~ssh/authorized_keys文件中:把药匙给你的机器名</p>
-<pre class=" language-bash"><code class="language-bash">ssh-copy-id -i ~/.ssh/id_rsa.pub PTC1</code></pre>
-<p>yes，并输入root密码。</p>
-<h3 id="测试免密钥是否成功"><a href="#测试免密钥是否成功" class="headerlink" title="测试免密钥是否成功"></a>测试免密钥是否成功</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> PTC1</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqdwdg"><img src="https://s3.ax1x.com/2021/01/25/sqdwdg.png" alt="sqdwdg.png"></a></p>
-<p>退出：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">exit</span></code></pre>
-<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><p>配置hdfs-site.xml</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 路径</span>
-<span class="token function">cd</span> /root/hadoop/etc/hadoop</code></pre>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">vi</span> hdfs-site.xml</code></pre>
-<h3 id="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"><a href="#configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。" class="headerlink" title="configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。"></a>configuration标签里面配：数据冗余是指数据在存储器中的不必要的多次重复存储。</h3><pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--表示数据块的冗余度,默认是：3--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>dfs.replication<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<h3 id="配置core-site-xml"><a href="#配置core-site-xml" class="headerlink" title="配置core-site.xml"></a>配置core-site.xml</h3><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--配置NameNode地址。9000是RPC通信端口--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>fs.defaultFS<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>hdfs://192.168.171.101:8020<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--HDFS数据库保存在Linux的哪个目录，默认值时linux的tmp目录--></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>hadoop.tmp.dir<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>/root/hadoop/tmp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<p>配置mapred-site.xml:默认没有：cp mapred-site.xml.template mapred-site.xml(复制一个)</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token comment" spellcheck="true">&lt;!--MR运行的框架--></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>mapreduce.framework.name<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>yarn<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<p>配置 yarn-site.xml</p>
-<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>configuration</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--Yarn的主节点RM的位置--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.resourcemanager.hostname<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>192.168.171.101<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
+                <h2 id="CSS盒子："><a href="#CSS盒子：" class="headerlink" title="CSS盒子："></a>CSS盒子：</h2><h4 id="简单的一个盒子："><a href="#简单的一个盒子：" class="headerlink" title="简单的一个盒子："></a>简单的一个盒子：</h4><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
 
-    <span class="token comment" spellcheck="true">&lt;!--MapReduce运行方式：shuffle洗牌--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>property</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>name</span><span class="token punctuation">></span></span>yarn.nodemanager.aux-services<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>name</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>value</span><span class="token punctuation">></span></span>mapreduce_shuffle<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>value</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>property</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>configuration</span><span class="token punctuation">></span></span></code></pre>
-<p>格式化:只能一次</p>
-<pre class=" language-bash"><code class="language-bash"> $ hdfs namenode -format</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sqdWeU"><img src="https://s3.ax1x.com/2021/01/25/sqdWeU.png" alt="sqdWeU.png"></a></p>
-<pre class=" language-bash"><code class="language-bash">$ start-all.sh</code></pre>
-<p>访问 ip:50070</p>
-<p>出现hadoop，说明ok</p>
-<h2 id="踩坑一：vi-hadoop-env-sh-这里要改成-JAVA-HOME-的绝对路径"><a href="#踩坑一：vi-hadoop-env-sh-这里要改成-JAVA-HOME-的绝对路径" class="headerlink" title="踩坑一：vi hadoop-env.sh 这里要改成 JAVA_HOME 的绝对路径"></a>踩坑一：vi hadoop-env.sh 这里要改成 JAVA_HOME 的绝对路径</h2><h2 id="踩坑二：-如果无法访问，但是本机-curl-可以访问，说明是防火墙没有关闭"><a href="#踩坑二：-如果无法访问，但是本机-curl-可以访问，说明是防火墙没有关闭" class="headerlink" title="踩坑二： 如果无法访问，但是本机  curl 可以访问，说明是防火墙没有关闭"></a>踩坑二： 如果无法访问，但是本机  curl 可以访问，说明是防火墙没有关闭</h2><p>centos7上面不可用 iptables</p>
-<p>用的<code>firewalld</code></p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 查看防火墙状态</span>
-systemctl status firewalld
-<span class="token comment" spellcheck="true"># 关闭防火墙</span>
-systemctl stop firewalld
-<span class="token comment" spellcheck="true"># 禁止开机启动</span>
-systemctl disable firewalld</code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class=" language-CSS"><code class="language-CSS">div&#123;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    border-width: 10px;
+&#125;    </code></pre>
+<h3 id="文本的一些CSS属性："><a href="#文本的一些CSS属性：" class="headerlink" title="文本的一些CSS属性："></a>文本的一些CSS属性：</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*文本对齐方式*/</span>
+<span class="token property">text-align</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*文本所占高度*/</span>h
+line-height：<span class="token number">200</span>px<span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">/*首行缩进(缩进几个字体)*/</span>
+<span class="token property">text-indent</span><span class="token punctuation">:</span> <span class="token number">2</span>em<span class="token punctuation">;</span>
+<span class="token number">1</span>em=<span class="token number">1</span>font-size
+<span class="token comment" spellcheck="true">/*中划线/没有线/underline*/</span>
+<span class="token property">text-decoration</span><span class="token punctuation">:</span> line-through/none/underline
+<span class="token comment" spellcheck="true">/*设置光标*/</span>
+<span class="token property">cursor</span><span class="token punctuation">:</span> pointer/help<span class="token punctuation">;</span></code></pre>
+<h3 id="居中的实现方式-前提为一行文本"><a href="#居中的实现方式-前提为一行文本" class="headerlink" title="居中的实现方式:前提为一行文本"></a>居中的实现方式:前提为一行文本</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*垂直居中：文本高度等于盒子高度*/</span></code></pre>
+<h3 id="盒子属性："><a href="#盒子属性：" class="headerlink" title="盒子属性："></a>盒子属性：</h3><pre class=" language-css"><code class="language-css"><span class="token property">border-radius</span><span class="token punctuation">:</span><span class="token number">10</span>px<span class="token punctuation">;</span></code></pre>
 
                 
             </div>
@@ -618,7 +526,7 @@ systemctl disable firewalld</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/25/Hadoop-%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/">http://example.com/2021/01/25/Hadoop-%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/</a>
+                    <a href="http://example.com/2021/01/25/css-css-he-zi/">http://example.com/2021/01/25/css-css-he-zi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -656,8 +564,8 @@ systemctl disable firewalld</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hadoop/">
-                                    <span class="chip bg-color">Hadoop</span>
+                                <a href="/tags/Css/">
+                                    <span class="chip bg-color">Css</span>
                                 </a>
                             
                         </div>
@@ -833,13 +741,13 @@ systemctl disable firewalld</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/02/02/Vue%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B/">
+                <a href="/2021/01/25/css-he-zi-mo-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Vue最简单的实例">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CSS_盒子模型">
                         
-                        <span class="card-title">Vue最简单的实例</span>
+                        <span class="card-title">CSS_盒子模型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -850,7 +758,7 @@ systemctl disable firewalld</code></pre>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
                         </span>
                         <span class="publish-author">
                             
@@ -863,8 +771,8 @@ systemctl disable firewalld</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/Css/">
+                        <span class="chip bg-color">Css</span>
                     </a>
                     
                 </div>
@@ -878,13 +786,13 @@ systemctl disable firewalld</code></pre>
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/25/CSS-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">
+                <a href="/2021/01/25/css-yi-xie-chang-yong-shu-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CSS_盒子模型">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="CSS_一些常用属性">
                         
-                        <span class="card-title">CSS_盒子模型</span>
+                        <span class="card-title">CSS_一些常用属性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

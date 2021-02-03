@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="搭建博客, WhattheFx">
+    <meta name="keywords" content="CSS_盒子模型, WhattheFx">
     <meta name="description" content="I see you">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>搭建博客 | WhattheFx</title>
+    <title>CSS_盒子模型 | WhattheFx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">搭建博客</h1>
+                    <h1 class="description center-align post-title">CSS_盒子模型</h1>
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Css/">
+                                <span class="chip bg-color">Css</span>
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-17
+                    2021-01-25
                 </div>
                 
 
@@ -478,82 +478,98 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h2><h3 id="1-需要安装："><a href="#1-需要安装：" class="headerlink" title="1.需要安装："></a>1.需要安装：</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### node</span>
-<span class="token comment" spellcheck="true">### git</span></code></pre>
-<h3 id="2-查看安装成功的指令："><a href="#2-查看安装成功的指令：" class="headerlink" title="2.查看安装成功的指令："></a>2.查看安装成功的指令：</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### node -v</span>
-<span class="token comment" spellcheck="true">### npm -v</span></code></pre>
-<h3 id="3-GitHub注册账号，建库-配密钥："><a href="#3-GitHub注册账号，建库-配密钥：" class="headerlink" title="3.GitHub注册账号，建库,配密钥："></a>3.GitHub注册账号，建库,配密钥：</h3><h4 id="1-使用你的邮箱注册GitHub帐号"><a href="#1-使用你的邮箱注册GitHub帐号" class="headerlink" title="(1):使用你的邮箱注册GitHub帐号"></a>(1):使用你的邮箱注册GitHub帐号</h4><h4 id="2-创建库的名称的命名方式：用户名-github-io"><a href="#2-创建库的名称的命名方式：用户名-github-io" class="headerlink" title="(2):创建库的名称的命名方式：用户名.github.io"></a>(2):创建库的名称的命名方式：<strong>用户名</strong>.github.io</h4><h4 id="3-安装好Git后，右键“git-bash-here”进行一系列操作，以下是配置密钥的教程："><a href="#3-安装好Git后，右键“git-bash-here”进行一系列操作，以下是配置密钥的教程：" class="headerlink" title="(3):安装好Git后，右键“git bash here”进行一系列操作，以下是配置密钥的教程："></a>(3):安装好Git后，右键“git bash here”进行一系列操作，以下是配置密钥的教程：</h4><p>具体操作:如果是windows:</p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token comment" spellcheck="true">#一 .设置git的user name和email：</span>
+                <h2 id="盒子模型：四部分-任何一个元素都可以设置为一个盒子。"><a href="#盒子模型：四部分-任何一个元素都可以设置为一个盒子。" class="headerlink" title="盒子模型：四部分,任何一个元素都可以设置为一个盒子。"></a>盒子模型：四部分,任何一个元素都可以设置为一个盒子。</h2><pre class=" language-css"><code class="language-css">/* <span class="token number">1.</span>外边距：margin
+   <span class="token number">2.</span>盒子壁：border
+   <span class="token number">3.</span>内边距： padding
+   <span class="token number">4.</span>盒子内容： width + height
+  margin + border + padding + （content=width +height<span class="token punctuation">)</span></code></pre>
+<h2 id="盒子模型图："><a href="#盒子模型图：" class="headerlink" title="盒子模型图："></a>盒子模型图：</h2><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sW863V"><img src="https://s3.ax1x.com/2021/01/20/sW863V.jpg" alt="sW863V.jpg"></a></p>
+<h2 id="两盒子嵌套，让里面的盒子居中："><a href="#两盒子嵌套，让里面的盒子居中：" class="headerlink" title="两盒子嵌套，让里面的盒子居中："></a>两盒子嵌套，让里面的盒子居中：</h2><pre class=" language-css"><code class="language-css">/*<span class="token number">1.</span>两个盒子content一样大<span class="token punctuation">;</span>
+  <span class="token number">2.</span>外面的盒子套padding；</code></pre>
+<h3 id="Padding-margin-border-width是复合值"><a href="#Padding-margin-border-width是复合值" class="headerlink" title="Padding,margin,border-width是复合值:"></a>Padding,margin,border-width是复合值:</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*1.四个值顺时针：上右下左
+   2.三个值：上，左右，下
+   3.两个值：上下，左右*/</span></code></pre>
+<h2 id="盒子模型计算：可看控制台查看"><a href="#盒子模型计算：可看控制台查看" class="headerlink" title="盒子模型计算：可看控制台查看"></a>盒子模型计算：可看控制台查看</h2><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*计算可视区域的大小*/</span></code></pre>
+<h2 id="通过margin调整标签之间的距离："><a href="#通过margin调整标签之间的距离：" class="headerlink" title="通过margin调整标签之间的距离："></a>通过margin调整标签之间的距离：</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demo2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
+<pre class=" language-css"><code class="language-css"><span class="token number">.</span>demo&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">10</span>px
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
+<span class="token number">.</span>demo<span class="token number">2</span>&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">10</span>px
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<h2 id="定位："><a href="#定位：" class="headerlink" title="定位："></a>定位：</h2><pre class=" language-css"><code class="language-css">&lt;div>&lt;/div></code></pre>
+<pre class=" language-css"><code class="language-css">div &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*可定位*/</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*左边线距左边距*/</span>
+    left：<span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*右边线距上边距*/</span>
+  <span class="token comment" spellcheck="true">/*  right：100px;*/</span>
+    <span class="token comment" spellcheck="true">/*上边线距上边距*/</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<h4 id="body具有天生的magin-8px过。"><a href="#body具有天生的magin-8px过。" class="headerlink" title="body具有天生的magin:8px过。"></a>body具有天生的magin:8px过。</h4><h2 id="绝对定位与相对定位："><a href="#绝对定位与相对定位：" class="headerlink" title="绝对定位与相对定位："></a>绝对定位与相对定位：</h2><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*
+  1.层模型：绝对定位，就脱离原来的位置定位
+  2.相对定位：保留原来的位置定位
+*/</span>
+<span class="token comment" spellcheck="true">/*
+带有绝对定位的盒子相对于最近的有定位的父级进行定位，如果没有，那么相对于文档进行定位
+*/</span>
+<span class="token comment" spellcheck="true">/*
+带有相对定位的盒子相对于他原来的位置进行定位
+*/</span></code></pre>
+<h3 id="定位原则："><a href="#定位原则：" class="headerlink" title="定位原则："></a>定位原则：</h3><pre class=" language-css"><code class="language-css">/*要定位的盒子设置位absolutely，被定位的盒子设置为relative作为参照。</code></pre>
+<h3 id="固定定位：应用于广告；"><a href="#固定定位：应用于广告；" class="headerlink" title="固定定位：应用于广告；"></a>固定定位：应用于广告；</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
 
-$ <span class="token function">git</span> config --global user.name <span class="token string">"test"</span> <span class="token comment" spellcheck="true">#换成github用户名</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<pre class=" language-css"><code class="language-css">div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<h2 id="块级元素居中："><a href="#块级元素居中：" class="headerlink" title="块级元素居中："></a>块级元素居中：</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
 
-$ <span class="token function">git</span> config --global user.email <span class="token string">"test@qq.com"</span> <span class="token comment" spellcheck="true">#绑定GitHub的邮箱</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="设置一个块级元素居中："><a href="#设置一个块级元素居中：" class="headerlink" title="设置一个块级元素居中："></a>设置一个块级元素居中：</h2><pre class=" language-css"><code class="language-css">div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">/*差半个身位，因为上面设置的是相对于左顶点的百分之五十*/</span>
+    <span class="token comment" spellcheck="true">/*需要设置负值*/</span>
+    <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">50</span>px<span class="token punctuation">;</span>
+    <span class="token property">margin-top</span><span class="token punctuation">:</span> -<span class="token number">50</span>px<span class="token punctuation">;</span>
+&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<h3 id="浮动：-行排列"><a href="#浮动：-行排列" class="headerlink" title="浮动： 行排列"></a>浮动： 行排列</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*1.脱标：指定位置(动）*/</span>
+<span class="token comment" spellcheck="true">/*2.浮动的盒子不保留原先的位置*/</span>
+<span class="token property">float</span><span class="token punctuation">:</span>left/none/right
+<span class="token comment" spellcheck="true">/*浮动流按一行排列*/</span></code></pre>
+<h2 id="Flex布局："><a href="#Flex布局：" class="headerlink" title="Flex布局："></a>Flex布局：</h2><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*通过给父级添加flex属性，来控制子集*/</span></code></pre>
+<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*容器属性：**
+父级，元素是跟着主轴排列
+- flex-direction：row/row-reverse/column/column-reverse决定项目的排列方向
+- flex-wrap：决定如何换行
+- flex-flow：上面两个的简写
+- justify-content：决定主轴的对齐方式（水平方向）
+- align-items：决定交叉轴的对齐方式（垂直方向）
+- align-content：决定多根轴线的对齐方式
 
+**项目属性：**
 
-<span class="token comment" spellcheck="true">#二 生成密钥  ssh-keygen -t rsa -C “test@qq.com” #绑定GitHub的邮箱</span>
- 按3个回车，密码为空。<span class="token punctuation">(</span>不要输密码<span class="token punctuation">)</span> 
-
-
-<span class="token comment" spellcheck="true">#生成目录是C:\Users\Administrator\.ssh（此处地址要视本机情况而定）</span>
-<span class="token comment" spellcheck="true">#然后将得到的公匙添加到对应的git服务器当中(gitlab,github,gitee)</span>
-<span class="token comment" spellcheck="true">#公钥id_rsa.pub设置到管理后台当前账号的ssh key中</span></code></pre>
-<p>以本机为例子：</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sk7huj"><img src="https://s3.ax1x.com/2021/01/05/sk7huj.png" alt="sk7huj.png"></a></p>
-<p>此密钥要添加到github上</p>
-<p>git bash上检验：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">ssh</span> git@github.com</code></pre>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sk7L2F"><img src="https://s3.ax1x.com/2021/01/05/sk7L2F.png" alt="sk7L2F.png"></a></p>
-<h2 id="进入搭建："><a href="#进入搭建：" class="headerlink" title="进入搭建："></a>进入搭建：</h2><h3 id="1-建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo："><a href="#1-建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo：" class="headerlink" title="1.建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo："></a>1.建一个Blog文件夹，进入文件夹，在此文件夹打开命令行界面，输入以下指令安装Hexo：</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g hexo-cli </code></pre>
-<h3 id="接着初始化初始化我们的博客，输入："><a href="#接着初始化初始化我们的博客，输入：" class="headerlink" title="接着初始化初始化我们的博客，输入："></a>接着初始化初始化我们的博客，输入：</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 会在Blog文件夹中创建一个blog文件夹</span>
-hexo init blog</code></pre>
-<h3 id="注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹"><a href="#注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹" class="headerlink" title="注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹"></a>注：以上指令都是针对Blog文件夹，接下来指令是争对blog文件夹</h3><h3 id="2-输入以下指令，为检测博客雏形："><a href="#2-输入以下指令，为检测博客雏形：" class="headerlink" title="2.输入以下指令，为检测博客雏形："></a>2.输入以下指令，为检测博客雏形：</h3><pre class=" language-bash"><code class="language-bash">hexo new test_my_site
-
-hexo g
-
-hexo s</code></pre>
-<h3 id="当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。"><a href="#当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。" class="headerlink" title="当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。"></a>当运行出现本地网址时，切换到浏览器，输入对应的网址，查看博客模板。</h3><h4 id="Hexo相关指令："><a href="#Hexo相关指令：" class="headerlink" title="Hexo相关指令："></a>Hexo相关指令：</h4><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo -g <span class="token comment" spellcheck="true">#安装Hexo</span>
-<span class="token function">npm</span> update hexo -g <span class="token comment" spellcheck="true">#升级</span>
-hexo init <span class="token comment" spellcheck="true">#初始化博客</span>
-
-命令简写
-hexo n <span class="token string">"我的博客"</span> <span class="token operator">==</span> hexo new <span class="token string">"我的博客"</span> <span class="token comment" spellcheck="true">#新建文章</span>
-hexo g <span class="token operator">==</span> hexo generate <span class="token comment" spellcheck="true">#生成</span>
-hexo s <span class="token operator">==</span> hexo server <span class="token comment" spellcheck="true">#启动服务预览</span>
-hexo d <span class="token operator">==</span> hexo deploy <span class="token comment" spellcheck="true">#部署</span>
-
-hexo server <span class="token comment" spellcheck="true">#Hexo会监视文件变动并自动更新，无须重启服务器</span>
-hexo server -s <span class="token comment" spellcheck="true">#静态模式</span>
-hexo server -p 5000 <span class="token comment" spellcheck="true">#更改端口</span>
-hexo server -i 192.168.1.1 <span class="token comment" spellcheck="true">#自定义 IP</span>
-hexo clean <span class="token comment" spellcheck="true">#清除缓存，若是网页正常情况下可以忽略这条命令</span></code></pre>
-<h2 id="修改配置文件，并推送网站"><a href="#修改配置文件，并推送网站" class="headerlink" title="修改配置文件，并推送网站"></a>修改配置文件，并推送网站</h2><p>上面只是在本地预览，接下来要做的就是就是推送网站，也就是发布网站，让我们的网站可以被更多的人访问。在设置之前，需要解释一个概念，在blog根目录里的_config.yml文件称为<strong>站点</strong>配置文件。</p>
-<p>进入根目录里的themes文件夹，里面也有个_config.yml文件，这个称为<strong>主题</strong>配置文件(后面设置主题要用到)</p>
-<h3 id="1-配置站点配置文件，后保存"><a href="#1-配置站点配置文件，后保存" class="headerlink" title="1.配置站点配置文件，后保存"></a>1.配置站点配置文件，后保存</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 翻到文末：</span>
-<span class="token comment" spellcheck="true">### 修改格式和内容如下，注意冒号后有空格</span>
-deploy:
-  type: <span class="token function">git</span>
-  repo: 仓库中ssh下的网址
-  branch: master参考如下：</code></pre>
-<h3 id="2-安装Git部署插件："><a href="#2-安装Git部署插件：" class="headerlink" title="2.安装Git部署插件："></a>2.安装Git部署插件：</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-deployer-git --save</code></pre>
-<h3 id="3-推送："><a href="#3-推送：" class="headerlink" title="3.推送："></a>3.推送：</h3><pre class=" language-bash"><code class="language-bash">hexo clean 
-hexo g 
-hexo d</code></pre>
-<h3 id="以上操作完成后，你博客已经上线，输入网址：xxxx-github-io即可查看，xxxx为你GitHub的用户名。"><a href="#以上操作完成后，你博客已经上线，输入网址：xxxx-github-io即可查看，xxxx为你GitHub的用户名。" class="headerlink" title="以上操作完成后，你博客已经上线，输入网址：xxxx.github.io即可查看，xxxx为你GitHub的用户名。"></a>以上操作完成后，你博客已经上线，输入网址：xxxx.github.io即可查看，xxxx为你GitHub的用户名。</h3><h2 id="买域名，并实现绑定："><a href="#买域名，并实现绑定：" class="headerlink" title="买域名，并实现绑定："></a>买域名，并实现绑定：</h2><h3 id="以腾讯云为实例："><a href="#以腾讯云为实例：" class="headerlink" title="以腾讯云为实例："></a>以腾讯云为实例：</h3><h3 id="1-购买域名网址："><a href="#1-购买域名网址：" class="headerlink" title="(1):  购买域名网址："></a>(1):  购买域名网址：</h3><h3 id="2-绑定域名网址：https-console-cloud-tencent-com-domain"><a href="#2-绑定域名网址：https-console-cloud-tencent-com-domain" class="headerlink" title="(2):  绑定域名网址：https://console.cloud.tencent.com/domain"></a>(2):  绑定域名网址：<a target="_blank" rel="noopener" href="https://console.cloud.tencent.com/domain">https://console.cloud.tencent.com/domain</a></h3><h3 id="3-点击解析-，添加两条记录如下："><a href="#3-点击解析-，添加两条记录如下：" class="headerlink" title="(3)点击解析 ，添加两条记录如下："></a>(3)点击解析 ，添加两条记录如下：</h3><pre class=" language-bash"><code class="language-bash">@           CNAME         默认              xxxx.github.io                   600
-www         CNAME         默认              xxxx.github.io                   600  </code></pre>
-<h4 id="4-登录GitHub，进入之前创建的仓库，点击settings，设置Custom-domain，输入你的域名"><a href="#4-登录GitHub，进入之前创建的仓库，点击settings，设置Custom-domain，输入你的域名" class="headerlink" title="(4)登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名"></a>(4)登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名</h4><h4 id="5-第三步，进入本地博客文件夹-，进入blog-source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www-不建议带有www"><a href="#5-第三步，进入本地博客文件夹-，进入blog-source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www-不建议带有www" class="headerlink" title="(5)第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www(不建议带有www):"></a>(5)第三步，进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。如果带有www，那么以后访问的时候必须带有www完整的域名才可以访问，但如果不带有www，以后访问的时候带不带www都可以访问。所以建议，不要带有www。这里我还是写了www(不建议带有www):</h4><h4 id="保存，命名为CNAME-注意没有后缀。"><a href="#保存，命名为CNAME-注意没有后缀。" class="headerlink" title="保存，命名为CNAME,注意没有后缀。"></a>保存，命名为CNAME,注意没有后缀。</h4><h4 id="完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入："><a href="#完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入：" class="headerlink" title="完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入："></a>完成这几步，进入blog目录中，按住shift键右击打开命令行，依次输入：</h4><pre class=" language-bash"><code class="language-bash">hexo clean
-hexo g
-hexo d</code></pre>
-<h2 id="个性化设置："><a href="#个性化设置：" class="headerlink" title="个性化设置："></a>个性化设置：</h2><h3 id="1-拉主题："><a href="#1-拉主题：" class="headerlink" title="1.拉主题："></a>1.拉主题：</h3><h3 id="1-首先下载你想要的主题到themes里面你自定义命名的文件夹面-如果时that主题，最好就命名我that"><a href="#1-首先下载你想要的主题到themes里面你自定义命名的文件夹面-如果时that主题，最好就命名我that" class="headerlink" title="(1).首先下载你想要的主题到themes里面你自定义命名的文件夹面(如果时that主题，最好就命名我that)"></a>(1).首先下载你想要的主题到themes里面你自定义命名的文件夹面(如果时that主题，最好就命名我that)</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 使用git clone</span>
-<span class="token function">git</span> clone https://github.com/iissnan/hexo-theme-next themes/next</code></pre>
-<h3 id="2-上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径"><a href="#2-上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径" class="headerlink" title="(2).上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径"></a>(2).上面的方式没有加速，很慢，建议直接去GitHub下载rar文件，解压手动加入对应路径</h3><h3 id="2-修改配置-进入themes里面的的文件-config-yml："><a href="#2-修改配置-进入themes里面的的文件-config-yml：" class="headerlink" title="2.修改配置,进入themes里面的的文件_config.yml："></a>2.修改配置,进入themes里面的的文件_config.yml：</h3><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 把theme改成你自定义的文件夹名称(that,一般就为主题名)</span></code></pre>
-<h3 id="完成这几步后，再推送："><a href="#完成这几步后，再推送：" class="headerlink" title="完成这几步后，再推送："></a>完成这几步后，再推送：</h3><pre class=" language-bash"><code class="language-bash">hexo clean
-hexo g
-hexo d</code></pre>
-<h2 id="发文章："><a href="#发文章：" class="headerlink" title="发文章："></a>发文章：</h2><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">### 我们会发现在blog根目录下的source文件夹中的_post文件夹中多了一个 博客名字.md 文件,点进去编译即可</span>
-hexo n <span class="token string">"博客名字"</span></code></pre>
-<h3 id="最后再推送："><a href="#最后再推送：" class="headerlink" title="最后再推送："></a>最后再推送：</h3><pre class=" language-bash"><code class="language-bash">hexo clean
-hexo g
-hexo d</code></pre>
+- order：定义项目的排列顺序
+- flex-grow：定义项目的放大比例
+- flex-shrink：定义项目的缩小比例
+- flex-basis：定义项目占的主轴长度
+- flex：flex-grow、flex-shrink、flex-basis简写，默认0 1 auto
+- align-self：单个项目的对齐方式，覆盖原来的父元素的align-items*/</span></code></pre>
 
                 
             </div>
@@ -580,7 +596,7 @@ hexo d</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/17/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">http://example.com/2021/01/17/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</a>
+                    <a href="http://example.com/2021/01/25/css-he-zi-mo-xing/">http://example.com/2021/01/25/css-he-zi-mo-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -618,8 +634,8 @@ hexo d</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Css/">
+                                    <span class="chip bg-color">Css</span>
                                 </a>
                             
                         </div>
@@ -795,13 +811,13 @@ hexo d</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/01/25/HTML-%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80/">
+                <a href="/2021/01/25/hadoop-wei-fen-bu-shi-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="HTML_超文本标记语言">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Hadoop_伪分布式搭建">
                         
-                        <span class="card-title">HTML_超文本标记语言</span>
+                        <span class="card-title">Hadoop_伪分布式搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -825,8 +841,8 @@ hexo d</code></pre>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Html/">
-                        <span class="chip bg-color">Html</span>
+                    <a href="/tags/Hadoop/">
+                        <span class="chip bg-color">Hadoop</span>
                     </a>
                     
                 </div>
@@ -837,16 +853,16 @@ hexo d</code></pre>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Current&nbsp;<i class="far fa-dot-circle"></i>
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/17/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+                <a href="/2021/01/25/css-css-he-zi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="搭建博客">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CSS_CSS盒子">
                         
-                        <span class="card-title">搭建博客</span>
+                        <span class="card-title">CSS_CSS盒子</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -857,7 +873,7 @@ hexo d</code></pre>
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
                             </span>
                         <span class="publish-author">
                             
@@ -867,12 +883,11 @@ hexo d</code></pre>
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Css/">
+                        <span class="chip bg-color">Css</span>
                     </a>
                     
                 </div>

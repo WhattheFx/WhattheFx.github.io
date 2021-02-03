@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vue最简单的实例, WhattheFx">
+    <meta name="keywords" content="CSS_引入方式, WhattheFx">
     <meta name="description" content="I see you">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vue最简单的实例 | WhattheFx</title>
+    <title>CSS_引入方式 | WhattheFx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -320,12 +320,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Vue最简单的实例</h1>
+                    <h1 class="description center-align post-title">CSS_引入方式</h1>
                 </div>
             </div>
         </div>
@@ -441,8 +441,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Vue/">
-                                <span class="chip bg-color">Vue</span>
+                            <a href="/tags/Css/">
+                                <span class="chip bg-color">Css</span>
                             </a>
                         
                     </div>
@@ -457,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-02-02
+                    2021-01-25
                 </div>
                 
 
@@ -478,43 +478,25 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="声明式编程："><a href="#声明式编程：" class="headerlink" title="声明式编程："></a>声明式编程：</h2><pre class=" language-html"><code class="language-html"><span class="token comment" spellcheck="true">&lt;!-- 声明式渲染 --></span>
-<span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!-- 引入vue，也可以直接下载其文件，引用 --></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--在new vue的过程中，就上面的div交给这个vue管理了，会解析其语法，如&amp;#123;&amp;#123;message&amp;#125;&amp;#125;，它会发现其中有一个变量message,然后去找data里面找该语法有没有被定义，如果被定义，变量的值会直接显示--></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span> message <span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-    <span class="token comment" spellcheck="true">//在vue.js里面肯定定义了一个类名叫vue，所以下面直接创建实例对象</span>
-    <span class="token comment" spellcheck="true">//es6一般不用var，var有很多缺陷，没有变量的作用域</span>
-    <span class="token comment" spellcheck="true">//实例中也可以添加组件即：</span>
-    <span class="token comment" spellcheck="true">//如以下形式：</span>
-    <span class="token comment" spellcheck="true">// template：</span>
-    <span class="token comment" spellcheck="true">// &lt;div></span>
-    <span class="token comment" spellcheck="true">// &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2></span>
-    <span class="token comment" spellcheck="true">// &lt;button @click= "btnClick">按钮&lt;/button></span>
-    <span class="token comment" spellcheck="true">// &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2></span>
-    <span class="token comment" spellcheck="true">// &lt;/div></span>
-      <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//用于挂载要管理的元素</span>
-        el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//在new vue的过程中，就上面的div交给这个#app管理了，会解析其语法，它会发现其中有一个变量message,交给了vue实例管理</span>
-    <span class="token comment" spellcheck="true">//它会找这个message在data里面有没有被定义，如果被定义了，他会在div中的&amp;#123;&amp;#123;message&amp;#125;&amp;#125;中予以显示</span>
-        data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//定义数据</span>
-          message<span class="token punctuation">:</span> <span class="token string">'Hello Vue!'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+                <h2 id="CSS引入方式："><a href="#CSS引入方式：" class="headerlink" title="CSS引入方式："></a>CSS引入方式：</h2><h3 id="1-行间样式："><a href="#1-行间样式：" class="headerlink" title="1.行间样式："></a>1.行间样式：</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token style-attr language-css"><span class="token attr-name"> <span class="token attr-name">style</span></span><span class="token punctuation">="</span><span class="token attr-value"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">100</span>px <span class="token property">background-color</span><span class="token punctuation">:</span>red</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="2-页面级CSS"><a href="#2-页面级CSS" class="headerlink" title="2.页面级CSS:"></a>2.页面级CSS:</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
+        div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px
+            <span class="token property">background-color</span><span class="token punctuation">:</span> red
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>  
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="3-外部CSS文件："><a href="#3-外部CSS文件：" class="headerlink" title="3.外部CSS文件："></a>3.外部CSS文件：</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。*/</span>
+创建index<span class="token number">.</span>css,在head标签里面写&lt;link rel=<span class="token string">"stylesheet"</span> type=<span class="token string">"text/css"</span> href=<span class="token string">"index.css"</span>>&lt;/link>
+   div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px
+            <span class="token property">background-color</span><span class="token punctuation">:</span> red
+        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>  </code></pre>
 
                 
             </div>
@@ -541,7 +523,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/02/02/Vue%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B/">http://example.com/2021/02/02/Vue%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%9E%E4%BE%8B/</a>
+                    <a href="http://example.com/2021/01/25/css-yin-ru-fang-shi/">http://example.com/2021/01/25/css-yin-ru-fang-shi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +561,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Vue/">
-                                    <span class="chip bg-color">Vue</span>
+                                <a href="/tags/Css/">
+                                    <span class="chip bg-color">Css</span>
                                 </a>
                             
                         </div>
@@ -756,13 +738,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/02/02/Vue%E7%9A%84%E5%B0%81%E8%A3%85/">
+                <a href="/2021/01/25/css-xuan-ze-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt=".Vue的封装">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CSS_选择器">
                         
-                        <span class="card-title">.Vue的封装</span>
+                        <span class="card-title">CSS_选择器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -773,7 +755,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
                         </span>
                         <span class="publish-author">
                             
@@ -786,8 +768,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/Css/">
+                        <span class="chip bg-color">Css</span>
                     </a>
                     
                 </div>
@@ -801,13 +783,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/25/Hadoop-%E4%BC%AA%E5%88%86%E5%B8%83%E5%BC%8F%E6%90%AD%E5%BB%BA/">
+                <a href="/2021/01/25/html-chao-wen-ben-biao-ji-yu-yan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="Hadoop_伪分布式搭建">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="HTML_超文本标记语言">
                         
-                        <span class="card-title">Hadoop_伪分布式搭建</span>
+                        <span class="card-title">HTML_超文本标记语言</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -831,8 +813,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hadoop/">
-                        <span class="chip bg-color">Hadoop</span>
+                    <a href="/tags/Html/">
+                        <span class="chip bg-color">Html</span>
                     </a>
                     
                 </div>
