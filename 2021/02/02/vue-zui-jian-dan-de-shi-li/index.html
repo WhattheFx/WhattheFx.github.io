@@ -489,9 +489,9 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
     <span class="token comment" spellcheck="true">&lt;!-- 引入vue，也可以直接下载其文件，引用 --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://cdn.jsdelivr.net/npm/vue/dist/vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token comment" spellcheck="true">&lt;!--在new vue的过程中，就上面的div交给这个vue管理了，会解析其语法，如&amp;#123;&amp;#123;message&amp;#125;&amp;#125;，它会发现其中有一个变量message,然后去找data里面找该语法有没有被定义，如果被定义，变量的值会直接显示--></span>
+    <span class="token comment" spellcheck="true">&lt;!--在new vue的过程中，就上面的div交给这个vue管理了，会解析其语法，如{{message}}，它会发现其中有一个变量message,然后去找data里面找该语法有没有被定义，如果被定义，变量的值会直接显示--></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token entity" title="&#123;">&amp;#123;</span><span class="token entity" title="&#123;">&amp;#123;</span> message <span class="token entity" title="&#125;">&amp;#125;</span><span class="token entity" title="&#125;">&amp;#125;</span>
+        {{ message }}
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
     <span class="token comment" spellcheck="true">//在vue.js里面肯定定义了一个类名叫vue，所以下面直接创建实例对象</span>
@@ -500,18 +500,18 @@
     <span class="token comment" spellcheck="true">//如以下形式：</span>
     <span class="token comment" spellcheck="true">// template：</span>
     <span class="token comment" spellcheck="true">// &lt;div></span>
-    <span class="token comment" spellcheck="true">// &lt;h2>&amp;#123;&amp;#123;message&amp;#125;&amp;#125;&lt;/h2></span>
+    <span class="token comment" spellcheck="true">// &lt;h2>{{message}}&lt;/h2></span>
     <span class="token comment" spellcheck="true">// &lt;button @click= "btnClick">按钮&lt;/button></span>
-    <span class="token comment" spellcheck="true">// &lt;h2>&amp;#123;&amp;#123;name&amp;#125;&amp;#125;&lt;/h2></span>
+    <span class="token comment" spellcheck="true">// &lt;h2>{{name}}&lt;/h2></span>
     <span class="token comment" spellcheck="true">// &lt;/div></span>
-      <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">//用于挂载要管理的元素</span>
         el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span><span class="token comment" spellcheck="true">//在new vue的过程中，就上面的div交给这个#app管理了，会解析其语法，它会发现其中有一个变量message,交给了vue实例管理</span>
-    <span class="token comment" spellcheck="true">//它会找这个message在data里面有没有被定义，如果被定义了，他会在div中的&amp;#123;&amp;#123;message&amp;#125;&amp;#125;中予以显示</span>
-        data<span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//定义数据</span>
+    <span class="token comment" spellcheck="true">//它会找这个message在data里面有没有被定义，如果被定义了，他会在div中的{{message}}中予以显示</span>
+        data<span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token comment" spellcheck="true">//定义数据</span>
           message<span class="token punctuation">:</span> <span class="token string">'Hello Vue!'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-      <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>

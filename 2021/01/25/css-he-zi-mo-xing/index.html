@@ -492,14 +492,14 @@
 <h2 id="盒子模型计算：可看控制台查看"><a href="#盒子模型计算：可看控制台查看" class="headerlink" title="盒子模型计算：可看控制台查看"></a>盒子模型计算：可看控制台查看</h2><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*计算可视区域的大小*/</span></code></pre>
 <h2 id="通过margin调整标签之间的距离："><a href="#通过margin调整标签之间的距离：" class="headerlink" title="通过margin调整标签之间的距离："></a>通过margin调整标签之间的距离：</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>demo2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-css"><code class="language-css"><span class="token number">.</span>demo&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token class">.demo</span></span><span class="token punctuation">{</span>
     <span class="token property">margin-right</span><span class="token punctuation">:</span> <span class="token number">10</span>px
-&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>
-<span class="token number">.</span>demo<span class="token number">2</span>&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector"><span class="token class">.demo2</span></span><span class="token punctuation">{</span>
     <span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token number">10</span>px
-&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="定位："><a href="#定位：" class="headerlink" title="定位："></a>定位：</h2><pre class=" language-css"><code class="language-css">&lt;div>&lt;/div></code></pre>
-<pre class=" language-css"><code class="language-css">div &amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+<pre class=" language-css"><code class="language-css"><span class="token selector">div </span><span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">/*可定位*/</span>
     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
     <span class="token comment" spellcheck="true">/*左边线距左边距*/</span>
@@ -511,7 +511,7 @@
     <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
     <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
-&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h4 id="body具有天生的magin-8px过。"><a href="#body具有天生的magin-8px过。" class="headerlink" title="body具有天生的magin:8px过。"></a>body具有天生的magin:8px过。</h4><h2 id="绝对定位与相对定位："><a href="#绝对定位与相对定位：" class="headerlink" title="绝对定位与相对定位："></a>绝对定位与相对定位：</h2><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*
   1.层模型：绝对定位，就脱离原来的位置定位
   2.相对定位：保留原来的位置定位
@@ -526,17 +526,17 @@
 <h3 id="固定定位：应用于广告；"><a href="#固定定位：应用于广告；" class="headerlink" title="固定定位：应用于广告；"></a>固定定位：应用于广告；</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<pre class=" language-css"><code class="language-css">div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+<pre class=" language-css"><code class="language-css"><span class="token selector">div</span><span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> fixed<span class="token punctuation">;</span>
     <span class="token property">width</span><span class="token punctuation">:</span><span class="token number">50</span>px<span class="token punctuation">;</span>
     <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
     <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
     <span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#fff</span><span class="token punctuation">;</span>
-&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h2 id="块级元素居中："><a href="#块级元素居中：" class="headerlink" title="块级元素居中："></a>块级元素居中：</h2><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
 
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-<h2 id="设置一个块级元素居中："><a href="#设置一个块级元素居中：" class="headerlink" title="设置一个块级元素居中："></a>设置一个块级元素居中：</h2><pre class=" language-css"><code class="language-css">div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+<h2 id="设置一个块级元素居中："><a href="#设置一个块级元素居中：" class="headerlink" title="设置一个块级元素居中："></a>设置一个块级元素居中：</h2><pre class=" language-css"><code class="language-css"><span class="token selector">div</span><span class="token punctuation">{</span>
     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
     <span class="token property">left</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
     <span class="token property">top</span><span class="token punctuation">:</span> <span class="token number">50%</span><span class="token punctuation">;</span>
@@ -547,7 +547,7 @@
     <span class="token comment" spellcheck="true">/*需要设置负值*/</span>
     <span class="token property">margin-left</span><span class="token punctuation">:</span> -<span class="token number">50</span>px<span class="token punctuation">;</span>
     <span class="token property">margin-top</span><span class="token punctuation">:</span> -<span class="token number">50</span>px<span class="token punctuation">;</span>
-&amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span></code></pre>
+<span class="token punctuation">}</span></code></pre>
 <h3 id="浮动：-行排列"><a href="#浮动：-行排列" class="headerlink" title="浮动： 行排列"></a>浮动： 行排列</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*1.脱标：指定位置(动）*/</span>
 <span class="token comment" spellcheck="true">/*2.浮动的盒子不保留原先的位置*/</span>
 <span class="token property">float</span><span class="token punctuation">:</span>left/none/right

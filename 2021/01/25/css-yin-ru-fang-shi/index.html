@@ -483,20 +483,20 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="2-页面级CSS"><a href="#2-页面级CSS" class="headerlink" title="2.页面级CSS:"></a>2.页面级CSS:</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token style language-css">
-        div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+        <span class="token selector">div</span><span class="token punctuation">{</span>
             <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px
             <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px
             <span class="token property">background-color</span><span class="token punctuation">:</span> red
-        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
     </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span></code></pre>
 <h3 id="3-外部CSS文件："><a href="#3-外部CSS文件：" class="headerlink" title="3.外部CSS文件："></a>3.外部CSS文件：</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*href 属性的值可以是任何有效文档的相对或绝对 URL，包括片段标识符和 JavaScript 代码段。*/</span>
-创建index<span class="token number">.</span>css,在head标签里面写&lt;link rel=<span class="token string">"stylesheet"</span> type=<span class="token string">"text/css"</span> href=<span class="token string">"index.css"</span>>&lt;/link>
-   div&amp;<span class="token hexcode">#123</span><span class="token punctuation">;</span>
+<span class="token selector">创建index<span class="token class">.css</span>,在head标签里面写&lt;link rel="stylesheet" type="text/css" href="index<span class="token class">.css</span>">&lt;/link>
+   div</span><span class="token punctuation">{</span>
             <span class="token property">height</span><span class="token punctuation">:</span><span class="token number">100</span>px
             <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px
             <span class="token property">background-color</span><span class="token punctuation">:</span> red
-        &amp;<span class="token hexcode">#125</span><span class="token punctuation">;</span>  </code></pre>
+        <span class="token punctuation">}</span>  </code></pre>
 
                 
             </div>

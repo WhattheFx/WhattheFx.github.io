@@ -575,7 +575,10 @@
                 <p class="post-description">
                     
                         .vue的文件的封装：1.首先，创建的实例对象：main.js文件里面创建如下实例：
-const app new Vue(&amp;#123
+const app new Vue({
+
+})
+app
                     
                 </p>
                 <a href="/2021/02/02/vue-de-feng-zhuang/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
@@ -649,10 +652,14 @@ const app new Vue(&amp;#123
                         <div class="summary block-with-text">
                             
                                 .vue的文件的封装：1.首先，创建的实例对象：main.js文件里面创建如下实例：
-const app new Vue(&amp;#123;
+const app new Vue({
 
-&amp;#125;)
-app没有什么实质性的用处，其实可以省略const app，简写为以下
+})
+app没有什么实质性的用处，其实可以省略const app，简写为以下：
+new Vue({
+
+})
+ht
                             
                         </div>
                         <div class="publish-info">
@@ -840,11 +847,11 @@ tar zx
                                 CSS盒子：简单的一个盒子：&lt;div>
 
 &lt;/div>
-div&#123;
+div{
     width: 100px;
     height: 100px;
     border: 1px solid black;
-    border
+    border-widt
                             
                         </div>
                         <div class="publish-info">
@@ -938,9 +945,10 @@ font-st
                                 选择器：CSS选择HTML元素,以下标签加内容才能生效，然后灵活使用。1.id选择器：一一对应&lt;div id="only">
 
 &lt;/div>
-#only &amp;#123;
+#only {
     background-color:red;
-
+}
+2.class
                             
                         </div>
                         <div class="publish-info">
