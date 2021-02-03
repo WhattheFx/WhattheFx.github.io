@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>WhattheFx</title>
+  
+  <subtitle>Whiskey</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-02-03T04:45:37.859Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>PTC</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>.Vue的封装</title>
+    <link href="http://example.com/2021/02/02/vue-de-feng-zhuang/"/>
+    <id>http://example.com/2021/02/02/vue-de-feng-zhuang/</id>
+    <published>2021-02-02T15:27:53.000Z</published>
+    <updated>2021-02-03T04:45:37.859Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;vue的文件的封装：&quot;&gt;&lt;a href=&quot;#vue的文件的封装：&quot; class=&quot;headerlink&quot; title=&quot;.vue的文件的封装：&quot;&gt;&lt;/a&gt;.vue的文件的封装：&lt;/h2&gt;&lt;h3 id=&quot;1-首先，创建的实例对象：&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue最简单的实例</title>
+    <link href="http://example.com/2021/02/02/vue-zui-jian-dan-de-shi-li/"/>
+    <id>http://example.com/2021/02/02/vue-zui-jian-dan-de-shi-li/</id>
+    <published>2021-02-02T15:27:13.000Z</published>
+    <updated>2021-02-02T15:29:34.088Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;声明式编程：&quot;&gt;&lt;a href=&quot;#声明式编程：&quot; class=&quot;headerlink&quot; title=&quot;声明式编程：&quot;&gt;&lt;/a&gt;声明式编程：&lt;/h2&gt;&lt;pre class=&quot; language-html&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Vue" scheme="http://example.com/tags/Vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hadoop_伪分布式搭建</title>
+    <link href="http://example.com/2021/01/25/hadoop-wei-fen-bu-shi-da-jian/"/>
+    <id>http://example.com/2021/01/25/hadoop-wei-fen-bu-shi-da-jian/</id>
+    <published>2021-01-25T01:28:35.000Z</published>
+    <updated>2021-02-02T15:15:12.750Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;准备工作：&quot;&gt;&lt;a href=&quot;#准备工作：&quot; class=&quot;headerlink&quot; title=&quot;准备工作：&quot;&gt;&lt;/a&gt;准备工作：&lt;/h3&gt;&lt;p&gt;使用Hadoop，要关闭防火墙。&lt;/p&gt;
+&lt;h3 id=&quot;安装jdk：Java虚拟机&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hadoop" scheme="http://example.com/tags/Hadoop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS_盒子模型</title>
+    <link href="http://example.com/2021/01/25/css-he-zi-mo-xing/"/>
+    <id>http://example.com/2021/01/25/css-he-zi-mo-xing/</id>
+    <published>2021-01-25T01:23:32.000Z</published>
+    <updated>2021-02-02T15:11:11.651Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;盒子模型：四部分-任何一个元素都可以设置为一个盒子。&quot;&gt;&lt;a href=&quot;#盒子模型：四部分-任何一个元素都可以设置为一个盒子。&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Css" scheme="http://example.com/tags/Css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS_CSS盒子</title>
+    <link href="http://example.com/2021/01/25/css-css-he-zi/"/>
+    <id>http://example.com/2021/01/25/css-css-he-zi/</id>
+    <published>2021-01-25T01:22:32.000Z</published>
+    <updated>2021-02-02T15:11:32.762Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS盒子：&quot;&gt;&lt;a href=&quot;#CSS盒子：&quot; class=&quot;headerlink&quot; title=&quot;CSS盒子：&quot;&gt;&lt;/a&gt;CSS盒子：&lt;/h2&gt;&lt;h4 id=&quot;简单的一个盒子：&quot;&gt;&lt;a href=&quot;#简单的一个盒子：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Css" scheme="http://example.com/tags/Css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS_一些常用属性</title>
+    <link href="http://example.com/2021/01/25/css-yi-xie-chang-yong-shu-xing/"/>
+    <id>http://example.com/2021/01/25/css-yi-xie-chang-yong-shu-xing/</id>
+    <published>2021-01-25T01:20:50.000Z</published>
+    <updated>2021-02-02T15:11:25.217Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;CSS常用属性：属性的值用时，可以直接菜鸟教程查&quot;&gt;&lt;a href=&quot;#CSS常用属性：属性的值用时，可以直接菜鸟教程查&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Css" scheme="http://example.com/tags/Css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS_选择器</title>
+    <link href="http://example.com/2021/01/25/css-xuan-ze-qi/"/>
+    <id>http://example.com/2021/01/25/css-xuan-ze-qi/</id>
+    <published>2021-01-25T01:19:19.000Z</published>
+    <updated>2021-02-02T15:11:16.085Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;选择器：CSS选择HTML元素-以下标签加内容才能生效，然后灵活使用。&quot;&gt;&lt;a href=&quot;#选择器：CSS选择HTML元素-以下标签加内容才能生效，然后灵活使用。&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Css" scheme="http://example.com/tags/Css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS_引入方式</title>
+    <link href="http://example.com/2021/01/25/css-yin-ru-fang-shi/"/>
+    <id>http://example.com/2021/01/25/css-yin-ru-fang-shi/</id>
+    <published>2021-01-25T01:18:15.000Z</published>
+    <updated>2021-02-02T15:11:29.044Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS引入方式：&quot;&gt;&lt;a href=&quot;#CSS引入方式：&quot; class=&quot;headerlink&quot; title=&quot;CSS引入方式：&quot;&gt;&lt;/a&gt;CSS引入方式：&lt;/h2&gt;&lt;h3 id=&quot;1-行间样式：&quot;&gt;&lt;a href=&quot;#1-行间样式：&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Css" scheme="http://example.com/tags/Css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML_超文本标记语言</title>
+    <link href="http://example.com/2021/01/25/html-chao-wen-ben-biao-ji-yu-yan/"/>
+    <id>http://example.com/2021/01/25/html-chao-wen-ben-biao-ji-yu-yan/</id>
+    <published>2021-01-25T01:15:59.000Z</published>
+    <updated>2021-02-02T15:21:46.915Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;HTML-超文本标记语言-一般由一对一对标签组成。&quot;&gt;&lt;a href=&quot;#HTML-超文本标记语言-一般由一对一对标签组成。&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Html" scheme="http://example.com/tags/Html/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建博客</title>
+    <link href="http://example.com/2021/01/17/da-jian-bo-ke/"/>
+    <id>http://example.com/2021/01/17/da-jian-bo-ke/</id>
+    <published>2021-01-16T20:07:17.000Z</published>
+    <updated>2021-02-02T15:09:01.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;准备工作：&quot;&gt;&lt;a href=&quot;#准备工作：&quot; class=&quot;headerlink&quot; title=&quot;准备工作：&quot;&gt;&lt;/a&gt;准备工作：&lt;/h2&gt;&lt;h3 id=&quot;1-需要安装：&quot;&gt;&lt;a href=&quot;#1-需要安装：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Hexo" scheme="http://example.com/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>
