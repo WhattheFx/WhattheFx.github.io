@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-02-03T04:45:37.859Z</updated>
+  <updated>2021-02-22T04:58:58.396Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>git之提交代码</title>
+    <link href="http://example.com/2021/02/22/git-zhi-ti-jiao-dai-ma/"/>
+    <id>http://example.com/2021/02/22/git-zhi-ti-jiao-dai-ma/</id>
+    <published>2021-02-22T04:57:37.000Z</published>
+    <updated>2021-02-22T04:58:58.396Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;Typora使用小tips：&quot;&gt;&lt;a href=&quot;#Typora使用小tips：&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="git" scheme="http://example.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>.Vue的封装</title>
     <link href="http://example.com/2021/02/02/vue-de-feng-zhuang/"/>
     <id>http://example.com/2021/02/02/vue-de-feng-zhuang/</id>
     <published>2021-02-02T15:27:53.000Z</published>
-    <updated>2021-02-03T04:45:37.859Z</updated>
+    <updated>2021-02-22T04:59:07.619Z</updated>
     
     
       
