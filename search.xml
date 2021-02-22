@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Vue前端工程化之Vue脚手架</title>
+      <link href="2021/02/22/vue-qian-duan-gong-cheng-hua-zhi-vue-jiao-shou-jia/"/>
+      <url>2021/02/22/vue-qian-duan-gong-cheng-hua-zhi-vue-jiao-shou-jia/</url>
+      
+        <content type="html"><![CDATA[<h3 id="前端工程化："><a href="#前端工程化：" class="headerlink" title="前端工程化："></a>前端工程化：</h3><p>前端工程化又称前端模块化。</p><h3 id="Vue脚手架的介绍和安装："><a href="#Vue脚手架的介绍和安装：" class="headerlink" title="Vue脚手架的介绍和安装："></a>Vue脚手架的介绍和安装：</h3><ol><li><p>Vue脚手架用于快速生成Vue项目框架。</p></li><li><p>安装指令：3.x版本</p><blockquote><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> -g @vue/cli</code></pre></blockquote></li></ol><h3 id="基于交互式命令行的方式，创建新版Vue项目"><a href="#基于交互式命令行的方式，创建新版Vue项目" class="headerlink" title="基于交互式命令行的方式，创建新版Vue项目"></a>基于交互式命令行的方式，创建新版Vue项目</h3><blockquote><p>注：另外两种:一是基于图形化界面的方式创建Vue项目和二是基于2.x的旧版本创建 的旧版本的vue项目在此不做演示。</p></blockquote><ul><li><p>win+r输入cmd进入交互式页面，输入一下指令创建项目,注意项目名要为中文。</p><blockquote><pre class=" language-bash"><code class="language-bash">vue create my-project</code></pre><p><a href="https://imgchr.com/i/y7L5qJ"><img src="https://s3.ax1x.com/2021/02/22/y7L5qJ.png" alt="y7L5qJ.png"></a></p></blockquote></li><li><p>如上图所示，选择手动配置，用空格勾选，勾选结果如下：</p><p><a href="https://imgchr.com/i/y7OZLQ"><img src="https://s3.ax1x.com/2021/02/22/y7OZLQ.png" alt="y7OZLQ.png"></a></p></li><li><p>选择2.x的Vue</p><p><a href="https://imgchr.com/i/y7XCm4"><img src="https://s3.ax1x.com/2021/02/22/y7XCm4.png" alt="y7XCm4.png"></a></p></li><li><p>后续操作做以下选择：</p><p><img src="C:\Users\29833\AppData\Roaming\Typora\typora-user-images\image-20210222145315325.png" alt="image-20210222145315325"></p></li><li><p>最后是否保存模板以供下次使用：这个随意。</p><p><a href="https://imgchr.com/i/y7X5NR"><img src="https://s3.ax1x.com/2021/02/22/y7X5NR.png" alt="y7X5NR.png"></a></p></li><li><p>enter后完成创建。</p><p>有时安装会出现报错，可能是网络问题，重新创建即可。</p></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git之提交代码</title>
       <link href="2021/02/22/git-zhi-ti-jiao-dai-ma/"/>
       <url>2021/02/22/git-zhi-ti-jiao-dai-ma/</url>
