@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>退出功能的实现</title>
+      <link href="2021/02/24/tui-chu-gong-neng-de-shi-xian/"/>
+      <url>2021/02/24/tui-chu-gong-neng-de-shi-xian/</url>
+      
+        <content type="html"><![CDATA[<h3 id="退出："><a href="#退出：" class="headerlink" title="退出："></a>退出：</h3><ul><li><p>退出功能实现原理：把token干掉。</p><blockquote><p>基于token的方式实现退出比较简单，只需要销毁本地token即可。这样，后续的请求就不会携带token，必须重新登录生成一个新的token之后才可以访问页面。</p></blockquote></li><li><p>怎么清除token？</p><blockquote><pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//清空token</span>window<span class="token punctuation">.</span>sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">//跳转到登录页</span><span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span></code></pre></blockquote></li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vue电商 </tag>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue前端工程化之Vue脚手架</title>
       <link href="2021/02/22/vue-qian-duan-gong-cheng-hua-zhi-vue-jiao-shou-jia/"/>
       <url>2021/02/22/vue-qian-duan-gong-cheng-hua-zhi-vue-jiao-shou-jia/</url>

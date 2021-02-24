@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CSS_一些常用属性, WhattheFx">
+    <meta name="keywords" content="退出功能的实现, WhattheFx">
     <meta name="description" content="I see you">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>CSS_一些常用属性 | WhattheFx</title>
+    <title>退出功能的实现 | WhattheFx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">CSS_一些常用属性</h1>
+                    <h1 class="description center-align post-title">退出功能的实现</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Css/">
-                                <span class="chip bg-color">Css</span>
+                            <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                                <span class="chip bg-color">Vue电商</span>
+                            </a>
+                        
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -458,21 +462,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-01-25
+                    2021-02-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-02-02
+                    2021-02-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    205
+                    94
                 </div>
                 
 
@@ -499,37 +503,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="CSS常用属性：属性的值用时，可以直接菜鸟教程查"><a href="#CSS常用属性：属性的值用时，可以直接菜鸟教程查" class="headerlink" title="CSS常用属性：属性的值用时，可以直接菜鸟教程查"></a>CSS常用属性：属性的值用时，可以直接菜鸟教程查</h3><h3 id="设置字体的属性：默认高度16px"><a href="#设置字体的属性：默认高度16px" class="headerlink" title="设置字体的属性：默认高度16px"></a>设置字体的属性：默认高度16px</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*字体大小，设置的是高*/</span>
-<span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">50</span>px；
-<span class="token comment" spellcheck="true">/*加粗,值可以写数字*/</span>
-<span class="token property">font-weight</span><span class="token punctuation">:</span>bolder；
-<span class="token comment" spellcheck="true">/*斜体*/</span>
-<span class="token property">font-style</span><span class="token punctuation">:</span> italic<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*乔布斯发明的字体*/</span>
-<span class="token property">font-family</span><span class="token punctuation">:</span> arial/cursive<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*颜色:
-1.英文单词（不用于开发）
-2.颜色代码
-3.颜色函数
-*/</span>
-<span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#ff4400</span></code></pre>
-<h4 id="颜色代码-十六进制-：红绿蓝拼接到一起"><a href="#颜色代码-十六进制-：红绿蓝拼接到一起" class="headerlink" title="颜色代码(十六进制)：红绿蓝拼接到一起"></a>颜色代码(十六进制)：红绿蓝拼接到一起</h4><pre class=" language-css"><code class="language-css">r                            g                   b
-<span class="token number">00</span>-ff                      <span class="token number">00</span>-ff               <span class="token number">00</span>-ff   
-<span class="token hexcode">#000000</span> 黑
-<span class="token hexcode">#ff0000</span> 红<span class="token punctuation">(</span>满<span class="token punctuation">)</span>
-<span class="token hexcode">#00ff00</span> 绿<span class="token punctuation">(</span>满<span class="token punctuation">)</span>
-<span class="token hexcode">#0000ff</span> 蓝<span class="token punctuation">(</span>满<span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">/*保证每两位都是重复可以省些写成一个*/</span>
-<span class="token hexcode">#ff4400</span>=><span class="token hexcode">#f40</span> 淘宝红</code></pre>
-<h4 id="颜色函数：0-25"><a href="#颜色函数：0-25" class="headerlink" title="颜色函数：0-25"></a>颜色函数：0-25</h4><pre class=" language-css"><code class="language-css"><span class="token function">rgb</span><span class="token punctuation">(</span><span class="token number">255</span>,<span class="token number">255</span>,<span class="token number">255</span><span class="token punctuation">)</span></code></pre>
-<h3 id="盒子属性："><a href="#盒子属性：" class="headerlink" title="盒子属性："></a>盒子属性：</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*复合属性*/</span>
-<span class="token comment" spellcheck="true">/*border-width border-style border-color*/</span>
-<span class="token comment" spellcheck="true">/*border-style:dashed*/</span>
-<span class="token property">border</span><span class="token punctuation">:</span><span class="token number">1</span>px solid black<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*每个边可以单独设置*/</span>
-<span class="token property">border-left</span><span class="token punctuation">:</span><span class="token number">1</span>px solid black<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">/*透明色*/</span>
-<span class="token property">border-left-color</span><span class="token punctuation">:</span> transparent<span class="token punctuation">;</span></code></pre>
+                <h3 id="退出："><a href="#退出：" class="headerlink" title="退出："></a>退出：</h3><ul>
+<li><p>退出功能实现原理：把token干掉。</p>
+<blockquote>
+<p>基于token的方式实现退出比较简单，只需要销毁本地token即可。这样，后续的请求就不会携带token，必须重新登录生成一个新的token之后才可以访问页面。</p>
+</blockquote>
+</li>
+<li><p>怎么清除token？</p>
+<blockquote>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//清空token</span>
+window<span class="token punctuation">.</span>sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">//跳转到登录页</span>
+<span class="token keyword">this</span><span class="token punctuation">.</span>$router<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">)</span></code></pre>
+</blockquote>
+</li>
+</ul>
 
                 
             </div>
@@ -556,7 +544,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/01/25/css-yi-xie-chang-yong-shu-xing/">http://example.com/2021/01/25/css-yi-xie-chang-yong-shu-xing/</a>
+                    <a href="http://example.com/2021/02/24/tui-chu-gong-neng-de-shi-xian/">http://example.com/2021/02/24/tui-chu-gong-neng-de-shi-xian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -594,8 +582,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Css/">
-                                    <span class="chip bg-color">Css</span>
+                                <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                                    <span class="chip bg-color">Vue电商</span>
+                                </a>
+                            
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -767,17 +759,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/01/25/css-css-he-zi/">
+                <a href="/2021/02/24/tui-chu-gong-neng-de-shi-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="CSS_CSS盒子">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="退出功能的实现">
                         
-                        <span class="card-title">CSS_CSS盒子</span>
+                        <span class="card-title">退出功能的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -787,9 +780,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -798,11 +791,16 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Css/">
-                        <span class="chip bg-color">Css</span>
+                    <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                        <span class="chip bg-color">Vue电商</span>
+                    </a>
+                    
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -816,13 +814,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/01/25/css-xuan-ze-qi/">
+                <a href="/2021/02/22/vue-qian-duan-gong-cheng-hua-zhi-vue-jiao-shou-jia/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CSS_选择器">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Vue前端工程化之Vue脚手架">
                         
-                        <span class="card-title">CSS_选择器</span>
+                        <span class="card-title">Vue前端工程化之Vue脚手架</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -833,7 +831,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-01-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-22
                             </span>
                         <span class="publish-author">
                             
@@ -846,8 +844,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Css/">
-                        <span class="chip bg-color">Css</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
