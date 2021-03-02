@@ -472,7 +472,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    312
+                    445
                 </div>
                 
 
@@ -522,6 +522,21 @@
 <p>git checkout -b [branch name] 的效果相当于以下两步操作：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>branch name<span class="token punctuation">]</span>
 <span class="token function">git</span> checkout <span class="token punctuation">[</span>branch name<span class="token punctuation">]</span></code></pre>
+<p>查看文件状态：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status</code></pre>
+<p>提交所有代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span></code></pre>
+<p>再次查看状态：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status</code></pre>
+<p>此时本地有一个新分支，但没有同步到远程，用以下指令同步，第一次的指令如下(假如新建立的分支为user)：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># origin为云端仓库的别名，云端仓库用user分支保存</span>
+<span class="token function">git</span> push -u origin user</code></pre>
+<p>以后更新只需要用以下指令即可：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push</code></pre>
+<h3 id="合并分支打主分支：master"><a href="#合并分支打主分支：master" class="headerlink" title="合并分支打主分支：master"></a>合并分支打主分支：master</h3><p>更新本地的master代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> maerge user</code></pre>
+<p>推送到远程：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push</code></pre>
 
                 
             </div>
@@ -1042,7 +1057,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.2k</span>&nbsp;字
+                class="white-color">7.3k</span>&nbsp;字
             
             
             
