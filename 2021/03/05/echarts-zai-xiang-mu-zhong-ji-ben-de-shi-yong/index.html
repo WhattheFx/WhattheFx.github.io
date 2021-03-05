@@ -476,14 +476,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    488
+                    863
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    2 Min
+                    4 Min
                 </div>
                 
 
@@ -610,6 +610,100 @@
 
 
 </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="从后台调取数据进行展示：折线图"><a href="#从后台调取数据进行展示：折线图" class="headerlink" title="从后台调取数据进行展示：折线图"></a>从后台调取数据进行展示：折线图</h3><pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>template<span class="token operator">></span>
+    <span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token operator">&lt;</span>h3<span class="token operator">></span>面包屑导航区域<span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">></span> <span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>breadcrumb separator<span class="token operator">=</span><span class="token string">"/"</span><span class="token operator">></span>
+      <span class="token operator">&lt;</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item <span class="token punctuation">:</span>to<span class="token operator">=</span><span class="token string">"{ path: '/home' }"</span><span class="token operator">></span>首页<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item<span class="token operator">></span>数据统计<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item<span class="token operator">></span>
+      <span class="token operator">&lt;</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item<span class="token operator">></span>数据报表<span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">-</span>item<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>breadcrumb<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 卡片视图区域 <span class="token operator">--</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>el<span class="token operator">-</span>card<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> <span class="token number">2</span><span class="token punctuation">.</span><span class="token function">为Echarts准备一个具有大小</span><span class="token punctuation">(</span>宽高<span class="token punctuation">)</span>的Dom <span class="token operator">--</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"main"</span> style<span class="token operator">=</span><span class="token string">"width: 750px;height:400px;"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>card<span class="token operator">></span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>template<span class="token operator">></span>
+<span class="token operator">&lt;</span>script<span class="token operator">></span>
+<span class="token comment" spellcheck="true">// 1.导入echarts</span>
+<span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> echarts <span class="token keyword">from</span> <span class="token string">'echarts'</span>
+<span class="token comment" spellcheck="true">//用于数据合并</span>
+<span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">'lodash'</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+      <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">//需要跟请求的折线图数据合并的options</span>
+      options<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        title<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          text<span class="token punctuation">:</span> <span class="token string">'用户来源'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        tooltip<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          trigger<span class="token punctuation">:</span> <span class="token string">'axis'</span><span class="token punctuation">,</span>
+          axisPointer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+            type<span class="token punctuation">:</span> <span class="token string">'cross'</span><span class="token punctuation">,</span>
+            label<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+              backgroundColor<span class="token punctuation">:</span> <span class="token string">'#E9EEF3'</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        grid<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+          left<span class="token punctuation">:</span> <span class="token string">'3%'</span><span class="token punctuation">,</span>
+          right<span class="token punctuation">:</span> <span class="token string">'4%'</span><span class="token punctuation">,</span>
+          bottom<span class="token punctuation">:</span> <span class="token string">'3%'</span><span class="token punctuation">,</span>
+          containLabel<span class="token punctuation">:</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        xAxis<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            boundaryGap<span class="token punctuation">:</span> <span class="token boolean">false</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        yAxis<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+          <span class="token punctuation">{</span>
+            type<span class="token punctuation">:</span> <span class="token string">'value'</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment" spellcheck="true">//此时，页面上的元素已经被渲染完毕了</span>
+   <span class="token keyword">async</span> <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 3.基于准备好的dom，初始化echarts实例</span>
+        <span class="token keyword">var</span> myChart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'main'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+
+        <span class="token keyword">const</span> <span class="token punctuation">{</span>data<span class="token punctuation">:</span> res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'reports/type/1'</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'获取折线图数据失败'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+
+        <span class="token comment" spellcheck="true">// 4.准备数据和配置项</span>
+        <span class="token comment" spellcheck="true">// 合并数据</span>
+        <span class="token keyword">const</span> result <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">merge</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>options<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true">//5.展示数据:即调用里面的myCharts函数</span>
+       myChart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span>style lang<span class="token operator">=</span><span class="token string">"less"</span> scoped<span class="token operator">></span>
+
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>style<span class="token operator">></span></code></pre>
+<blockquote>
+<p>注：1.将原先的options删除</p>
+<p>​       2.直接展示调取的res.data，没有鼠标跟随效果，故不可行</p>
+<p>​       3.故要添加新的options,目的是实现鼠标跟随效果</p>
+<p>​       4.要用lodash合并res.data和新的options，命名为result，成为最终的options</p>
+</blockquote>
 
                 
             </div>
@@ -1144,7 +1238,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.2k</span>&nbsp;字
+                class="white-color">8.6k</span>&nbsp;字
             
             
             
