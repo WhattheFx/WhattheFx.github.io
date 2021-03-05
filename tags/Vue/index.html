@@ -387,20 +387,29 @@
                 </a>
                 
                 
-                <a href="/tags/Vue%E7%94%B5%E5%95%86/" title="Vue电商: 4">
+                <a href="/tags/Vue%E5%95%86%E5%9F%8E/" title="Vue商城: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Vue电商" style="background-color: #F5EEF8;">Vue电商
-                        <span class="tag-length">4</span>
+                            data-tagname="Vue商城" style="background-color: #F5EEF8;">Vue商城
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/Vue/" title="Vue: 7">
+                <a href="/tags/Vue/" title="Vue: 8">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Vue" style="background-color: #D5F5E3;">Vue
-                        <span class="tag-length">7</span>
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/Vue%E7%94%B5%E5%95%86/" title="Vue电商: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="Vue电商" style="background-color: #E8F8F5;">Vue电商
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
@@ -408,7 +417,7 @@
                 <a href="/tags/Html/" title="Html: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Html" style="background-color: #E8F8F5;">Html
+                            data-tagname="Html" style="background-color: #FEF9E7;">Html
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -417,7 +426,7 @@
                 <a href="/tags/Hadoop/" title="Hadoop: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Hadoop" style="background-color: #FEF9E7;">Hadoop
+                            data-tagname="Hadoop" style="background-color: #F8F9F9;">Hadoop
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -426,16 +435,7 @@
                 <a href="/tags/Git/" title="Git: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            data-tagname="Git" style="background-color: #F8F9F9;">Git
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/Vue%E5%95%86%E5%9F%8E/" title="Vue商城: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="Vue商城" style="background-color: #82E0AA;">Vue商城
+                            data-tagname="Git" style="background-color: #82E0AA;">Git
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -572,7 +572,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.7k</span>&nbsp;字
+                class="white-color">8.2k</span>&nbsp;字
             
             
             
@@ -851,7 +851,29 @@ $(function () {
 </body>
 
 </html>
-/WhattheFx.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+Days) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/WhattheFx/WhattheFx.github.io" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
