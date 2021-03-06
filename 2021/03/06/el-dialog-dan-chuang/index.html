@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git之提交代码, WhattheFx">
+    <meta name="keywords" content="el-dialog弹窗, WhattheFx">
     <meta name="description" content="I see you">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git之提交代码 | WhattheFx</title>
+    <title>el-dialog弹窗 | WhattheFx</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -321,12 +321,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git之提交代码</h1>
+                    <h1 class="description center-align post-title">el-dialog弹窗</h1>
                 </div>
             </div>
         </div>
@@ -442,8 +442,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Git/">
-                                <span class="chip bg-color">Git</span>
+                            <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                                <span class="chip bg-color">Vue电商</span>
+                            </a>
+                        
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
                     </div>
@@ -458,21 +462,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-02-22
+                    2021-03-06
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-06
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    459
+                    273
                 </div>
                 
 
@@ -499,44 +503,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="Typora使用小tips："><a href="#Typora使用小tips：" class="headerlink" title="Typora使用小tips："></a>Typora使用小tips：</h3><p>指令前加$是只针对Linux的指令。</p>
-<h3 id="指令：首次"><a href="#指令：首次" class="headerlink" title="指令：首次"></a>指令：首次</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> existing_folder                        <span class="token comment" spellcheck="true"># cd到项目的目录</span>
-<span class="token function">git</span> init                                  <span class="token comment" spellcheck="true"># 初始化本地仓库</span>
-<span class="token function">git</span> remote add origin giturl　            <span class="token comment" spellcheck="true"># 本地添加远程，giturl是ssh形式</span>
-<span class="token function">git</span> add <span class="token keyword">.</span>　                               <span class="token comment" spellcheck="true"># 将本目录下所有文件加到索引区</span>
-<span class="token function">git</span> commit　                              <span class="token comment" spellcheck="true"># 将索引区数据加到历史区</span>
-<span class="token function">git</span> push -u origin master　               <span class="token comment" spellcheck="true">#上传master分支 。//如果这里提示没有权限，是因为你的ssh配置有问题，需要重新配置</span></code></pre>
-<h3 id="指令：修改后以后每次提交：-u是针对Gitlab"><a href="#指令：修改后以后每次提交：-u是针对Gitlab" class="headerlink" title="指令：修改后以后每次提交：-u是针对Gitlab"></a>指令：修改后以后每次提交：-u是针对Gitlab</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span>               <span class="token comment" spellcheck="true"># 全部添加。</span>
-<span class="token function">git</span> commit -u <span class="token string">'做了一次修改'</span>     <span class="token comment" spellcheck="true"># ''里面的内容是自定义的，可以为你每次修订的内容，但不能重复。</span>
-<span class="token function">git</span> push                <span class="token comment" spellcheck="true"># 用git push更新</span></code></pre>
-<h3 id="指令：修改后以后每次提交：-m是针对Github"><a href="#指令：修改后以后每次提交：-m是针对Github" class="headerlink" title="指令：修改后以后每次提交：-m是针对Github"></a>指令：修改后以后每次提交：-m是针对Github</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span>               <span class="token comment" spellcheck="true"># 全部添加。</span>
-<span class="token function">git</span> commit -m <span class="token string">'做了一次修改'</span>     <span class="token comment" spellcheck="true"># ''里面的内容是自定义的，可以为你每次修订的内容，但不能重复。</span>
-<span class="token function">git</span> push                <span class="token comment" spellcheck="true"># 用git push更新</span></code></pre>
+                <h2 id="el-dialog弹窗"><a href="#el-dialog弹窗" class="headerlink" title="el-dialog弹窗"></a>el-dialog弹窗</h2><h3 id="Element-Ui官方：Dialog-对话框"><a href="#Element-Ui官方：Dialog-对话框" class="headerlink" title="Element-Ui官方：Dialog 对话框"></a>Element-Ui官方：<a target="_blank" rel="noopener" href="https://element.eleme.cn/#/zh-CN/component/dialog#dialog-dui-hua-kuang">Dialog 对话框</a></h3><p>官方示例：</p>
 <blockquote>
-<p>注意：</p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token comment" spellcheck="true">#github首次提交代码</span>
- <span class="token function">git</span> push --set-upstream origin login</code></pre>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-dialog</span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>提示<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dialogVisible<span class="token punctuation">"</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>30%<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:before-close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleClose<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dialog-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dialogVisible <span class="token punctuation">=</span> false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dialogVisible <span class="token punctuation">=</span> false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>确 定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-dialog</span><span class="token punctuation">></span></span></code></pre>
 </blockquote>
-<h3 id="创建-切换分支："><a href="#创建-切换分支：" class="headerlink" title="创建+切换分支："></a>创建+切换分支：</h3><p>创建分支的同时切换到该分支上，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b <span class="token punctuation">[</span>branch name<span class="token punctuation">]</span></code></pre>
-<p>git checkout -b [branch name] 的效果相当于以下两步操作：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch <span class="token punctuation">[</span>branch name<span class="token punctuation">]</span>
-<span class="token function">git</span> checkout <span class="token punctuation">[</span>branch name<span class="token punctuation">]</span></code></pre>
-<p>查看文件状态：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status</code></pre>
-<p>提交所有代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> add <span class="token keyword">.</span></code></pre>
-<p>再次查看状态：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> status</code></pre>
-<p>此时本地有一个新分支，但没有同步到远程，用以下指令同步，第一次的指令如下(假如新建立的分支为user)：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># origin为云端仓库的别名，云端仓库用user分支保存</span>
-<span class="token function">git</span> push -u origin user</code></pre>
-<p>以后更新只需要用以下指令即可：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push</code></pre>
-<h3 id="合并分支打主分支：master"><a href="#合并分支打主分支：master" class="headerlink" title="合并分支打主分支：master"></a>合并分支打主分支：master</h3><p>更新本地的master代码，示例：将user代码合并到主分支main分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> merge user</code></pre>
-<p>推送到远程：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push</code></pre>
+<h3 id="点击按钮-用-click绑定点击事件"><a href="#点击按钮-用-click绑定点击事件" class="headerlink" title="点击按钮:用@click绑定点击事件"></a>点击按钮:用@click绑定点击事件</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">icon</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>el-icon-edit<span class="token punctuation">"</span></span> <span class="token attr-name">size</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>mini<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>showEditDialog()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="定义事件"><a href="#定义事件" class="headerlink" title="定义事件"></a>定义事件</h3><pre class=" language-js"><code class="language-js">  <span class="token function">showEditDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'点击了编辑事件'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>editdialogVisible<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span></code></pre>
+<h3 id="修改弹窗-visible-sync-”editdialogVisible”是定义弹窗是否隐藏，确定和取消都会触发弹窗隐藏。"><a href="#修改弹窗-visible-sync-”editdialogVisible”是定义弹窗是否隐藏，确定和取消都会触发弹窗隐藏。" class="headerlink" title="修改弹窗: :visible.sync=”editdialogVisible”是定义弹窗是否隐藏，确定和取消都会触发弹窗隐藏。"></a>修改弹窗: :visible.sync=”editdialogVisible”是定义弹窗是否隐藏，确定和取消都会触发弹窗隐藏。</h3><pre class=" language-html"><code class="language-html"> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-dialog</span>
+  <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>修改用户<span class="token punctuation">"</span></span>
+  <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>editdialogVisible<span class="token punctuation">"</span></span>
+  <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50%<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span><span class="token punctuation">></span></span>这是一段信息<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dialog-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>editdialogVisible <span class="token punctuation">=</span> false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>editdialogVisible <span class="token punctuation">=</span> false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>确 定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-dialog</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="data里面定义editdialogVisible"><a href="#data里面定义editdialogVisible" class="headerlink" title="data里面定义editdialogVisible"></a>data里面定义editdialogVisible</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//默认是false,即隐藏，点击事件可以修改其值</span>
+            editdialogVisible<span class="token punctuation">:</span><span class="token boolean">false</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
+<h3 id="完成点击事件-点击改变editdialogVisible-的布尔值，即可触发弹窗。"><a href="#完成点击事件-点击改变editdialogVisible-的布尔值，即可触发弹窗。" class="headerlink" title="完成点击事件:点击改变editdialogVisible 的布尔值，即可触发弹窗。"></a>完成点击事件:点击改变editdialogVisible 的布尔值，即可触发弹窗。</h3><pre class=" language-js"><code class="language-js">  <span class="token function">showEditDialog</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>editdialogVisible <span class="token operator">=</span> <span class="token boolean">true</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'点击了编辑事件'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>editdialogVisible<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span></code></pre>
 
                 
             </div>
@@ -563,7 +569,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/02/22/git-zhi-ti-jiao-dai-ma/">http://example.com/2021/02/22/git-zhi-ti-jiao-dai-ma/</a>
+                    <a href="http://example.com/2021/03/06/el-dialog-dan-chuang/">http://example.com/2021/03/06/el-dialog-dan-chuang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -601,8 +607,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Git/">
-                                    <span class="chip bg-color">Git</span>
+                                <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                                    <span class="chip bg-color">Vue电商</span>
+                                </a>
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
                         </div>
@@ -774,17 +784,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2021/02/22/vue-qian-duan-gong-cheng-hua-zhi-vue-jiao-shou-jia/">
+                <a href="/2021/03/06/el-dialog-dan-chuang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="Vue前端工程化之Vue脚手架">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="el-dialog弹窗">
                         
-                        <span class="card-title">Vue前端工程化之Vue脚手架</span>
+                        <span class="card-title">el-dialog弹窗</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -794,9 +805,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-06
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -805,8 +816,13 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                        <span class="chip bg-color">Vue电商</span>
+                    </a>
                     
                     <a href="/tags/Vue/">
                         <span class="chip bg-color">Vue</span>
@@ -823,13 +839,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/02/02/vue-de-feng-zhuang/">
+                <a href="/2021/03/06/sou-suo-kuang-he-table-biao-ge-de-shi-xian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt=".Vue的封装">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="搜索框和Table表格的实现">
                         
-                        <span class="card-title">.Vue的封装</span>
+                        <span class="card-title">搜索框和Table表格的实现</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -840,7 +856,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-06
                             </span>
                         <span class="publish-author">
                             
@@ -852,6 +868,10 @@
                 </div>
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue%E7%94%B5%E5%95%86/">
+                        <span class="chip bg-color">Vue电商</span>
+                    </a>
                     
                     <a href="/tags/Vue/">
                         <span class="chip bg-color">Vue</span>
