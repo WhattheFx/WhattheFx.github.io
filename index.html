@@ -725,7 +725,13 @@ import  echarts from 'echarts'
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                参数的拼接
+                                参数的拼接小程序传参
+绑定点击事件,传参,传item.zzp_id
+
+&lt;u-card @click="navItemClick(item.zzp_id)">
+&lt;/u-card>
+
+接参数：用id去接，跳转的url上加一个带上id
                             
                         </div>
                         <div class="publish-info">
@@ -1213,7 +1219,7 @@ ht
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.2k</span>&nbsp;字
+                class="white-color">9.5k</span>&nbsp;字
             
             
             
