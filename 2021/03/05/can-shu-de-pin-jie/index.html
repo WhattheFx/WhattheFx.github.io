@@ -476,7 +476,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    466
+                    540
                 </div>
                 
 
@@ -604,6 +604,23 @@
         <span class="token punctuation">}</span></code></pre>
 <p>抽离后：</p>
 <pre class=" language-js"><code class="language-js"> <span class="token keyword">const</span> <span class="token punctuation">{</span>data<span class="token punctuation">:</span> res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`roles/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>role<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/rights/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rightId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span></code></pre>
+<h3 id="多者结合："><a href="#多者结合：" class="headerlink" title="多者结合："></a>多者结合：</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">async</span> <span class="token function">allotRights</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> keys <span class="token operator">=</span> <span class="token punctuation">[</span>
+            <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>treeRef<span class="token punctuation">.</span><span class="token function">getCheckedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>treeRef<span class="token punctuation">.</span><span class="token function">getHalfCheckedKeys</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">]</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>keys<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">//以英文逗号进行拼接</span>
+        <span class="token keyword">const</span> idStr <span class="token operator">=</span> keys<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+
+      <span class="token keyword">const</span> <span class="token punctuation">{</span>data<span class="token punctuation">:</span>res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`roles/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token keyword">this</span><span class="token punctuation">.</span>roleId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/rights`</span></span><span class="token punctuation">,</span><span class="token punctuation">{</span>rids<span class="token punctuation">:</span>idStr<span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'分配权限失败！'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">success</span><span class="token punctuation">(</span><span class="token string">'分配权限成功！'</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getRolesList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>SetRightDialogVisible <span class="token operator">=</span><span class="token boolean">false</span>
+    <span class="token punctuation">}</span></code></pre>
 
                 
             </div>
@@ -1136,7 +1153,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">14.2k</span>&nbsp;字
+                class="white-color">14.6k</span>&nbsp;字
             
             
             
