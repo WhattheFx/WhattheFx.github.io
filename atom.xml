@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-03-07T01:17:48.304Z</updated>
+  <updated>2021-03-07T01:19:46.755Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2021/03/07/de-han-yi/"/>
     <id>http://example.com/2021/03/07/de-han-yi/</id>
     <published>2021-03-07T01:14:51.000Z</published>
-    <updated>2021-03-07T01:17:48.304Z</updated>
+    <updated>2021-03-07T01:19:46.755Z</updated>
     
     
       
@@ -66,8 +66,8 @@
   
   <entry>
     <title>return的实质</title>
-    <link href="http://example.com/2021/03/06/return/"/>
-    <id>http://example.com/2021/03/06/return/</id>
+    <link href="http://example.com/2021/03/06/return-de-shi-zhi/"/>
+    <id>http://example.com/2021/03/06/return-de-shi-zhi/</id>
     <published>2021-03-06T12:50:19.000Z</published>
     <updated>2021-03-06T13:28:53.626Z</updated>
     
