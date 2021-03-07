@@ -469,21 +469,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-06
+                    2021-03-07
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    268
+                    466
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -578,6 +578,32 @@
 
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span></code></pre>
+<h3 id="拼接请求的到的数据：因为不是字符串，则不能用””-和之前的简单的拼接方法，要用"><a href="#拼接请求的到的数据：因为不是字符串，则不能用””-和之前的简单的拼接方法，要用" class="headerlink" title="拼接请求的到的数据：因为不是字符串，则不能用””,和之前的简单的拼接方法，要用${}"></a>拼接请求的到的数据：因为不是字符串，则不能用””,和之前的简单的拼接方法，要用${}</h3><p>示例如下:</p>
+<pre class=" language-js"><code class="language-js"> <span class="token keyword">async</span> <span class="token function">removeRightById</span><span class="token punctuation">(</span>role<span class="token punctuation">,</span>rightId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//弹框提示是否删除</span>
+          <span class="token comment" spellcheck="true">//弹框提示是否提示</span>
+     <span class="token keyword">const</span> confirmResult <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$confirm</span><span class="token punctuation">(</span><span class="token string">'此操作将永久删除该用户, 是否继续?'</span><span class="token punctuation">,</span> <span class="token string">'提示'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          confirmButtonText<span class="token punctuation">:</span> <span class="token string">'确定'</span><span class="token punctuation">,</span>
+          cancelButtonText<span class="token punctuation">:</span> <span class="token string">'取消'</span><span class="token punctuation">,</span>
+          type<span class="token punctuation">:</span> <span class="token string">'warning'</span>
+          <span class="token comment" spellcheck="true">// catch是捕获错误的</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>err <span class="token operator">=</span><span class="token operator">></span>
+        err<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true">// 如果用户确定删除，则返回值为字符串confirm</span>
+        <span class="token comment" spellcheck="true">// 如果用户取消了删除，则返回值为字符串cancel</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>confirmResult <span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>confirmResult <span class="token operator">!==</span> <span class="token string">'confirm'</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+          <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span><span class="token string">'已经取消删除'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// console.log(确定删除)</span>
+       <span class="token keyword">const</span> <span class="token punctuation">{</span>data<span class="token punctuation">:</span> res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`roles/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>role<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/rights/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rightId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
+       <span class="token keyword">if</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+           <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'删除权限失败！'</span><span class="token punctuation">)</span>
+       <span class="token punctuation">}</span>
+       <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">getRolesList</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span></code></pre>
+<p>抽离后：</p>
+<pre class=" language-js"><code class="language-js"> <span class="token keyword">const</span> <span class="token punctuation">{</span>data<span class="token punctuation">:</span> res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token keyword">delete</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`roles/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>role<span class="token punctuation">.</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/rights/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>rightId<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span></code></pre>
 
                 
             </div>
@@ -1110,7 +1136,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">13.9k</span>&nbsp;字
+                class="white-color">14.1k</span>&nbsp;字
             
             
             
