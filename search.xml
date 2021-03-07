@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>树形结构的基本使用</title>
+      <link href="2021/03/07/shu-xing-jie-gou-de-ji-ben-shi-yong/"/>
+      <url>2021/03/07/shu-xing-jie-gou-de-ji-ben-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="树形结构的基本使用"><a href="#树形结构的基本使用" class="headerlink" title="树形结构的基本使用"></a>树形结构的基本使用</h2><h3 id="官方示例"><a href="#官方示例" class="headerlink" title="官方示例"></a>官方示例</h3><pre class=" language-js"><code class="language-js"><span class="token operator">&lt;</span>el<span class="token operator">-</span>tree <span class="token punctuation">:</span>data<span class="token operator">=</span><span class="token string">"data"</span> <span class="token punctuation">:</span>props<span class="token operator">=</span><span class="token string">"defaultProps"</span> @node<span class="token operator">-</span>click<span class="token operator">=</span><span class="token string">"handleNodeClick"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>el<span class="token operator">-</span>tree<span class="token operator">></span></code></pre><blockquote><p>注：data是绑定数据，:props是绑定具体的字段，defaultProps是一个对象。</p></blockquote><h3 id="稍加修饰"><a href="#稍加修饰" class="headerlink" title="稍加修饰"></a>稍加修饰</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-tree</span> <span class="token attr-name">:data</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rightslist<span class="token punctuation">"</span></span> <span class="token attr-name">:props</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>treeProps<span class="token punctuation">"</span></span> <span class="token attr-name">show-checkbox</span> <span class="token attr-name">node-key</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>id<span class="token punctuation">"</span></span> <span class="token attr-name">default-expand-all</span><span class="token punctuation">></span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-tree</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">    data <span class="token punctuation">{</span>        <span class="token keyword">return</span> <span class="token punctuation">{</span>             rolelist<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>        treeProps<span class="token punctuation">:</span><span class="token punctuation">{</span>          label<span class="token punctuation">:</span><span class="token string">'authName'</span><span class="token punctuation">,</span>          children<span class="token punctuation">:</span><span class="token string">'children'</span>      <span class="token punctuation">}</span>     <span class="token punctuation">}</span>   <span class="token punctuation">}</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre><blockquote><ol><li>show-checkbox属性是添加勾选框。</li><li>node-key=”id”每次勾选绑定id。</li><li>default-expand-all默认展开树形结构。</li></ol></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vue电商 </tag>
+            
+            <tag> Element-Ui </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>三级for循环</title>
       <link href="2021/03/07/san-ji-for-xun-huan/"/>
       <url>2021/03/07/san-ji-for-xun-huan/</url>
