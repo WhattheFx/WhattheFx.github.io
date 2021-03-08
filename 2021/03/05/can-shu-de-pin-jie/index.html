@@ -469,14 +469,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-07
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    540
+                    579
                 </div>
                 
 
@@ -578,6 +578,15 @@
 
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span></code></pre>
+<pre class=" language-js"><code class="language-js">  <span class="token keyword">async</span>  <span class="token function">getParentCateList</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span>data<span class="token punctuation">:</span>res<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$http<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'categories'</span><span class="token punctuation">,</span><span class="token punctuation">{</span>params<span class="token punctuation">:</span><span class="token punctuation">{</span>type<span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>res<span class="token punctuation">.</span>meta<span class="token punctuation">.</span>status <span class="token operator">!==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>$message<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'获取父级类数据失败'</span><span class="token punctuation">)</span>
+
+    <span class="token punctuation">}</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>parentCateList<span class="token operator">=</span> res<span class="token punctuation">.</span>data
+    <span class="token punctuation">}</span><span class="token punctuation">,</span></code></pre>
 <h3 id="拼接请求的到的数据：因为不是字符串，则不能用””-和之前的简单的拼接方法，要用"><a href="#拼接请求的到的数据：因为不是字符串，则不能用””-和之前的简单的拼接方法，要用" class="headerlink" title="拼接请求的到的数据：因为不是字符串，则不能用””,和之前的简单的拼接方法，要用${}"></a>拼接请求的到的数据：因为不是字符串，则不能用””,和之前的简单的拼接方法，要用${}</h3><p>示例如下:</p>
 <pre class=" language-js"><code class="language-js"> <span class="token keyword">async</span> <span class="token function">removeRightById</span><span class="token punctuation">(</span>role<span class="token punctuation">,</span>rightId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token comment" spellcheck="true">//弹框提示是否删除</span>
@@ -1153,7 +1162,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.5k</span>&nbsp;字
+                class="white-color">16.8k</span>&nbsp;字
             
             
             
