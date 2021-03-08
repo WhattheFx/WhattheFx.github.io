@@ -465,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-02
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    459
+                    679
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -537,6 +537,21 @@
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> merge user</code></pre>
 <p>推送到远程：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push</code></pre>
+<h3 id="切换到远程分支"><a href="#切换到远程分支" class="headerlink" title="切换到远程分支"></a>切换到远程分支</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/astonishqft/article/details/83029490">博客链接</a></p>
+<p>查看远程所有分支</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">git</span> branch -a</code></pre>
+<p>git branch不带参数,列出本地已经存在的分支，并且在当前分支的前面用*标记，加上-a参数可以查看所有分支列表，包括本地和远程，远程分支一般会用红色字体标记出来</p>
+<ul>
+<li><p>dev<br>master<br>remotes/origin/HEAD -&gt; origin/master<br>remotes/origin/master<br>remotes/origin/release/caigou_v1.0</p>
+</li>
+<li><p>新建分支并切换到指定分支</p>
+</li>
+<li><pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -b dev origin/release/caigou_v1.0
+<span class="token function">git</span> checkout -b 本地分支名 origin/远程分支名</code></pre>
+</li>
+</ul>
+<p>该命令可以将远程git仓库里的指定分支拉取到本地，这样就在本地新建了一个dev分支，并和指定的远程分支release/caigou_v1.0关联了起来。</p>
+<p>Switched to a new branch ‘dev’<br>Branch ‘dev’ set up to track remote branch ‘release/caigou_v1.0’ from ‘origin’<br>原文链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/astonishqft/article/details/83029490">https://blog.csdn.net/astonishqft/article/details/83029490</a></p>
 
                 
             </div>
@@ -1057,7 +1072,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.2k</span>&nbsp;字
+                class="white-color">16.5k</span>&nbsp;字
             
             
             
