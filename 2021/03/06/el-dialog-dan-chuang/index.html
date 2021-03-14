@@ -469,21 +469,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
-                    2021-03-06
+                    2021-03-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
-                    273
+                    504
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
-                    1 Min
+                    2 Min
                 </div>
                 
 
@@ -543,6 +543,56 @@
       <span class="token keyword">this</span><span class="token punctuation">.</span>editdialogVisible <span class="token operator">=</span> <span class="token boolean">true</span>
       console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'点击了编辑事件'</span><span class="token punctuation">,</span><span class="token keyword">this</span><span class="token punctuation">.</span>editdialogVisible<span class="token punctuation">)</span>
   <span class="token punctuation">}</span></code></pre>
+<h3 id="关闭对话框后清空数据"><a href="#关闭对话框后清空数据" class="headerlink" title="关闭对话框后清空数据"></a>关闭对话框后清空数据</h3><p>添加点击事件：@close=”addCateDialogClosed”</p>
+<p>以下是关闭窗口，清空表单和联级选择器的数据的示例。</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span><span class="token punctuation">></span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-dialog</span>
+      <span class="token attr-name">title</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>添加分类<span class="token punctuation">"</span></span>
+      <span class="token attr-name">:visible.sync</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCatedialogVisible<span class="token punctuation">"</span></span>
+      <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>50%<span class="token punctuation">"</span></span>
+      <span class="token attr-name">@close</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCateDialogClosed<span class="token punctuation">"</span></span>
+    <span class="token punctuation">></span></span>
+         <span class="token comment" spellcheck="true">&lt;!-- 添加分类表单 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form</span>
+      <span class="token attr-name">:model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCateForm<span class="token punctuation">"</span></span>
+      <span class="token attr-name">:rules</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCateFormRules<span class="token punctuation">"</span></span>
+      <span class="token attr-name">ref</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCateFormRef<span class="token punctuation">"</span></span>
+      <span class="token attr-name">label-width</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100px<span class="token punctuation">"</span></span>
+    <span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>分类名称:<span class="token punctuation">"</span></span> <span class="token attr-name">prop</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cat_name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCateForm.cat_name<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-input</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-form-item</span> <span class="token attr-name">label</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>父级分类:<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token comment" spellcheck="true">&lt;!-- options用来指定数据源 --></span>
+        <span class="token comment" spellcheck="true">&lt;!-- props用来指定配置对象 --></span>
+          <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-cascader</span>
+    <span class="token attr-name">expand-trigger</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>hover<span class="token punctuation">"</span></span>
+    <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>selectedKeys<span class="token punctuation">"</span></span>
+    <span class="token attr-name">:options</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parentCateList<span class="token punctuation">"</span></span>
+    <span class="token attr-name">:props</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>cascaderProps<span class="token punctuation">"</span></span>
+    <span class="token attr-name">@change</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>parentCateChanged<span class="token punctuation">"</span></span>
+    <span class="token attr-name">clearable</span>
+    <span class="token attr-name">change-on-select</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-cascader</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form-item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-form</span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">slot</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>footer<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>dialog-footer<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCatedialogVisible <span class="token punctuation">=</span> false<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>取 消<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span><span class="token punctuation">></span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>el-button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>primary<span class="token punctuation">"</span></span> 
+          <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>addCate<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>确 定<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-button</span>
+        <span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>el-dialog</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+      <span class="token comment" spellcheck="true">//监听对话框的关闭事件，重置表单数据</span>
+    <span class="token function">addCateDialogClosed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>$refs<span class="token punctuation">.</span>addCateFormRef<span class="token punctuation">.</span><span class="token function">resetFields</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>selectedKeys <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>addCateForm<span class="token punctuation">.</span>cat_level <span class="token operator">=</span><span class="token number">0</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>addCateForm<span class="token punctuation">.</span>cat_pid <span class="token operator">=</span><span class="token number">0</span>
+    <span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></code></pre>
 
                 
             </div>
@@ -1075,7 +1125,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">16.8k</span>&nbsp;字
+                class="white-color">17.6k</span>&nbsp;字
             
             
             
